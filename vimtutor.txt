@@ -48,8 +48,7 @@ Note: The cursor keys should also work.  But using hjkl you will be able to
 
 
   !! NOTE: Before executing any of the steps below, read this entire lesson!!
-
-  1. Press the <ESC> key (to make sure you are in Normal mode).
+1. Press the <ESC> key (to make sure you are in Normal mode).
 
   2. Type:			:q! <ENTER>.
 
@@ -70,18 +69,18 @@ Note: The cursor keys should also work.  But using hjkl you will be able to
 		     Lesson 1.3: TEXT EDITING - DELETION
 
 
-** While in Normal mode press	x  to delete the character under the cursor. **
+** While in Normal mode press x  to delete the character under the cursor. **
 
   1. Move the cursor to the line below marked --->.
 
   2. To fix the errors, move the cursor until it is on top of the
      character to be deleted.
 
-  3. Press the	x  key to delete the unwanted character.
+  3. Press the x key to delete the unwanted character.
 
   4. Repeat steps 2 through 4 until the sentence is correct.
 
----> The ccow jumpedd ovverr thhe mooon.
+---> The cow and that is how it is now here jumped over the moon.
 
   5. Now that the line is correct, go on to Lesson 1.4.
 
@@ -105,8 +104,8 @@ NOTE: As you go through this tutor, do not try to memorize, learn by usage.
   4. As each error is fixed press <ESC> to return to Normal mode.
      Repeat steps 2 through 4 to correct the sentence.
 
----> There is text misng this .
----> There is some text missing from this line.
+---> There is text missng this .
+---> There is some text missing from this line, but I don't understand.
 
   5. When you are comfortable inserting text move to the summary below.
 
@@ -124,7 +123,7 @@ NOTE: As you go through this tutor, do not try to memorize, learn by usage.
   3. To exit Vim type:	   <ESC>   :q!	 <ENTER>  to trash all changes.
 	     OR type:	   <ESC>   :wq	 <ENTER>  to save the changes.
 
-  4. To delete a character under the cursor in Normal mode type:  x
+  4. To delete a character under the cursor in Normal mode type: x
 
   5. To insert text at the cursor while in Normal mode type:
 	 i     type in text	<ESC>
@@ -152,7 +151,7 @@ Now continue with Lesson 2.
   NOTE: The letters dw will appear on the last line of the screen as you type
 	them. If you typed something wrong, press  <ESC>  and start over.
 
----> There are a some words fun that don't belong paper in this sentence.
+---> There are some words that don't belong in this sentence.
 
   5. Repeat steps 3 and 4 until the sentence is correct and go to Lesson 2.2.
 
@@ -172,14 +171,10 @@ Now continue with Lesson 2.
 
   4. Type    d$    to delete to the end of the line.
 
----> Somebody typed the end of this line twice. end of this line twice.
+---> Somebody typed the end of this line twice.
 
 
   5. Move on to Lesson 2.3 to understand what is happening.
-
-
-
-
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		     Lesson 2.3: ON COMMANDS AND OBJECTS
@@ -201,12 +196,8 @@ Now continue with Lesson 2.
 NOTE:  For the adventurous, pressing just the object while in Normal mode
        without a command will move the cursor as specified in the object list.
 
-
-
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Lesson 2.4: AN EXCEPTION TO  'COMMAND-OBJECT'
-
 
 	       ** Type	 dd   to delete a whole line. **
 
@@ -219,13 +210,11 @@ NOTE:  For the adventurous, pressing just the object while in Normal mode
   4. Type   2dd   (remember  number-command-object) to delete the two lines.
 
       1)  Roses are red,
-      2)  Mud is fun,
       3)  Violets are blue,
       4)  I have a car,
       5)  Clocks tell time,
       6)  Sugar is sweet
       7)  And so are you.
-
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			 Lesson 2.5: THE UNDO COMMAND
@@ -243,12 +232,9 @@ NOTE:  For the adventurous, pressing just the object while in Normal mode
   7. Now type CTRL-R (keeping CTRL key pressed while hitting R) a few times
      to redo the commands (undo the undo's).
 
----> Fiix the errors oon thhis line and reeplace them witth undo.
+---> Fiix the errors oon thhis line and reeplace themj witth undo.
 
   8. These are very useful commands.  Now move on to the Lesson 2 Summary.
-
-
-
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			       LESSON 2 SUMMARY
@@ -289,16 +275,13 @@ NOTE:  For the adventurous, pressing just the object while in Normal mode
 
   5. Repeat steps 2 through 4 to put all the lines in correct order.
 
-     d) Can you learn too?
+     a) Roses are red,
      b) Violets are blue,
      c) Intelligence is learned,
-     a) Roses are red,
-
-
+     d) Can you learn too?
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		       Lesson 3.2: THE REPLACE COMMAND
-
 
   ** Type  r  and a character to replace the character under the cursor. **
 
@@ -310,14 +293,12 @@ NOTE:  For the adventurous, pressing just the object while in Normal mode
 
   4. Repeat steps 2 and 3 until the first line is correct.
 
---->  Whan this lime was tuoed in, someone presswd some wrojg keys!
+--->  When this lime was typed in, someone pressed some wrong keys!
 --->  When this line was typed in, someone pressed some wrong keys!
 
   5. Now move on to Lesson 3.2.
 
 NOTE: Remember that you should be learning by use, not memorization.
-
-
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Lesson 3.3: THE CHANGE COMMAND
@@ -335,16 +316,13 @@ NOTE: Remember that you should be learning by use, not memorization.
 
   5. Repeat steps 3 and 4 until the first sentence is the same as the second.
 
----> This lubw has a few wptfd that mrrf changing usf the change command.
+---> This line has a few words that need changing using the change command.
 ---> This line has a few words that need changing using the change command.
 
 Notice that  cw  not only replaces the word, but also places you in insert.
 
-
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		       Lesson 3.4: MORE CHANGES USING c
-
 
      ** The change command is used with the same objects as delete. **
 
@@ -360,14 +338,11 @@ Notice that  cw  not only replaces the word, but also places you in insert.
 
   5. Type  c$  to make the rest of the line like the second and press <ESC>.
 
----> The end of this line needs some help to make it like the second.
 ---> The end of this line needs to be corrected using the  c$  command.
-
-
+---> The end of this line needs to be corrected using the  c$  command.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			       LESSON 3 SUMMARY
-
 
   1. To replace text that has already been deleted, type   p .	This Puts the
      deleted text AFTER the cursor (if a line was deleted it will go on the
@@ -434,9 +409,9 @@ Now go on to the next lesson.
 
 
 
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		   Lesson 4.3: MATCHING PARENTHESES SEARCH
-
 
 	      ** Type  %  to find a matching ),], or } . **
 
@@ -452,11 +427,6 @@ Now go on to the next lesson.
 
 Note: This is very useful in debugging a program with unmatched parentheses!
 
-
-
-
-
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		      Lesson 4.4: A WAY TO CHANGE ERRORS
 
@@ -471,7 +441,7 @@ Note: This is very useful in debugging a program with unmatched parentheses!
   3. Now type	 :s/thee/the/g	   meaning substitute globally on the line.
      This changes all occurrences on the line.
 
----> thee best time to see thee flowers is in thee spring.
+---> the best time to see thee flowers is in thee spring.
 
   4. To change every occurrence of a character string between two lines,
      type   :#,#s/old/new/g    where #,# are the numbers of the two lines.
@@ -482,7 +452,6 @@ Note: This is very useful in debugging a program with unmatched parentheses!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			       LESSON 4 SUMMARY
-
 
   1. Ctrl-g  displays your location in the file and the file status.
      Shift-G  moves to the end of the file.  A line number followed
