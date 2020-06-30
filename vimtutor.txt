@@ -151,7 +151,7 @@ Now continue with Lesson 2.
   NOTE: The letters dw will appear on the last line of the screen as you type
 	them. If you typed something wrong, press  <ESC>  and start over.
 
----> There are some words that don't belong in this sentence.
+---> There are some words thathjklhjkl don't belong in this sentence.
 
   5. Repeat steps 3 and 4 until the sentence is correct and go to Lesson 2.2.
 
@@ -541,6 +541,7 @@ Note: This is very useful in debugging a program with unmatched parentheses!
 
 
 
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		   Lesson 5.4: RETRIEVING AND MERGING FILES
 
@@ -581,13 +582,7 @@ NOTE:  The file you retrieve is placed starting where the cursor is located.
   4.  :r FILENAME  retrieves disk file FILENAME and inserts it into the
       current file following the cursor position.
 
-
-
-
-
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+0630~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			 Lesson 6.1: THE OPEN COMMAND
 
 
