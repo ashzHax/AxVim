@@ -597,6 +597,8 @@ NOTE:  The file you retrieve is placed starting where the cursor is located.
 
 ---> After typing  o  the cursor is placed on the open line in Insert mode.
 
+--->
+
   4. To open up a line ABOVE the cursor, simply type a capital	O , rather
      than a lowercase  o.  Try this on the line below.
 Open up a line above this by typing Shift-O while the cursor is on this line.
@@ -623,7 +625,7 @@ Note: This avoids typing  i , the last character, the text to insert, <ESC>,
   3. Now complete the first line.  Note also that append is exactly the same
      as Insert mode, except for the location where text is inserted.
 
----> This line will allow you to practice
+---> This line will allow you to practice appending text to the end of a line.
 ---> This line will allow you to practice appending text to the end of a line.
 
 
@@ -642,13 +644,10 @@ Note: This avoids typing  i , the last character, the text to insert, <ESC>,
   3. Now type  R  and replace the remainder of the text on the first line by
      typing over the old text to make the first line the same as the second.
 
----> To make the first line the same as the last on this page use the keys.
+---> To make the first line the same as the second, type R and the new text.
 ---> To make the first line the same as the second, type R and the new text.
 
   4. Note that when you press <ESC> to exit, any unaltered text remains.
-
-
-
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -688,14 +687,6 @@ Note: This avoids typing  i , the last character, the text to insert, <ESC>,
   3. Typing a capital  R  enters Replace mode until  <ESC>  is pressed to exit.
 
   4. Typing ":set xxx" sets the option "xxx"
-
-
-
-
-
-
-
-
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		       LESSON 7: ON-LINE HELP COMMANDS
