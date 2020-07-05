@@ -41,5 +41,4 @@ help shiftround
 help shiftwidth
 help matchtime
 help hlsearch
-" configure ~/.vimrc with these settings to your preference
 
