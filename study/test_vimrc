@@ -1,1 +1,6 @@
-echo ">^.^<"
+set nu
+set wrap
+set shiftround
+set shiftwidth=4
+set matchtime=10
+set hlsearch

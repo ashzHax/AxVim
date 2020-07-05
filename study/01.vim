@@ -13,3 +13,5 @@ echohl
 " re-draws the screen? 
 redraw
 
+" Exercise
+echo ">^.^<"
