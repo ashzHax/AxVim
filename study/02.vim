@@ -33,6 +33,7 @@ set matchtime?
 set number numberwidth=6
 
 " Exercise
+
 help 'number'
 help relativenumber
 help numberwidth

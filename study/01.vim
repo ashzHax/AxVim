@@ -14,4 +14,6 @@ echohl
 redraw
 
 " Exercise
+
 echo ">^.^<"
+

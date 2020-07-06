@@ -11,6 +11,7 @@ map <c-d> dd
 map <space> viw " Select word
 
 " Exercise
+
 map - ddp
 map _ -
 map dd i
