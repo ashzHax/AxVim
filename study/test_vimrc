@@ -5,7 +5,7 @@ set shiftwidth=4
 set matchtime=10
 set hlsearch
 
-map - ddp
-imap <c-u> <esc>viwUi
-nmap <c-u> <esc>viwU
+noremap - ddp
+inoremap <c-u> <esc>viwUi
+nnoremap <c-u> <esc>viwU
 
