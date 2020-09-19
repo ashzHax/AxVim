@@ -1,8 +1,17 @@
 #!/bin/sh
 
 # by : ashz
-# reason : installing AxVim on system
+# reason : install script for AxVim Vim configuration
 
-# selectional install
-# 1. link
-# 2. file cpy
+root=~/.vim
+
+printf "\nalert: start script\n\n"
+#################################################
+mkdir ${root}         
+
+cp vimrc       ~/.vimrc
+cp -rf ./colors/   ${root}/. 
+cp -rf ./ftplugin/ ${root}/. 
+cp -rf ./ftdetect/ ${root}/. 
+#################################################
+printf "\nalert: finish script\n\n"
