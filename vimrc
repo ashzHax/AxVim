@@ -1,6 +1,6 @@
 " AXC development setup for Vim
 
-let TYPE='work'
+let TYPE='casual'
 
 " default settings
 set expandtab
