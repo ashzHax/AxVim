@@ -18,11 +18,6 @@
 " You should have received a copy of the GNU General Public License
 " along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-" NOTE: This colorscheme has been modified from the original. The changes are
-" primarily to add (or modify) 256-color xterm support, but may include other
-" changes also (e.g., bug fixes). Details can be found at:
-" http://github.com/KevinGoodsell/vim-xterm-colors
-
 set background=dark
 hi clear
 if exists("syntax_on")
@@ -31,7 +26,7 @@ endif
 let g:colors_name="lettuce"
 
 
-augroup Lettuce_extensions
+augroup Syntax_extensions
     au!
     au Syntax c,cpp,ruby,javascript syn match Operator "[*/%&|!=><^~,.;:?+-]\+" display contains=TOP
     au Syntax c,cpp syn region cParen matchgroup=Operator transparent start='(' end=')' contains=ALLBUT,@cParenGroup,cCppParen,cErrInBracket,cCppBracket,cCppString,@Spell
@@ -46,21 +41,6 @@ augroup Lettuce_extensions
     au Syntax javascript syn region javascriptCurlyBrackets matchgroup=Operator start="{" end="}" transparent fold
     au Syntax javascript syn region javascriptParentheses matchgroup=Operator start="(" end=")" transparent
     au Syntax javascript syn region javascriptSquareBrackets matchgroup=Operator start="\[" end="\]" transparent
-
-    autocmd InsertEnter * hi StatusLine guibg=#5f0000 ctermbg=52
-    autocmd InsertEnter * hi User1      guibg=#5f0000 ctermbg=52
-    autocmd InsertEnter * hi User2      guibg=#5f0000 ctermbg=52
-    autocmd InsertLeave * hi User2      guibg=#303030 ctermbg=236
-    autocmd InsertLeave * hi User1      guibg=#303030 ctermbg=236
-    autocmd InsertLeave * hi StatusLine guibg=#303030 ctermbg=236
-    autocmd CmdwinEnter * hi StatusLine guibg=#005f00 ctermbg=22
-    autocmd CmdwinEnter * hi User1      guibg=#005f00 ctermbg=22
-    autocmd CmdwinEnter * hi User2      guibg=#005f00 ctermbg=22
-    autocmd CmdwinLeave * hi User2      guibg=#303030 ctermbg=236
-    autocmd CmdwinLeave * hi User1      guibg=#303030 ctermbg=236
-    autocmd CmdwinLeave * hi StatusLine guibg=#303030 ctermbg=236
-
-    au ColorScheme * if g:colors_name != 'lettuce'|exe 'au! Lettuce_extensions'|endif
 augroup END
 
 
@@ -134,6 +114,20 @@ hi Todo             cterm=bold       ctermbg=143 ctermfg=16
 
 hi OperatorCurlyBrackets cterm=bold ctermfg=75
 
+" highlight modes
+autocmd InsertEnter * hi StatusLine ctermbg=52
+autocmd InsertEnter * hi User1      ctermbg=52
+autocmd InsertEnter * hi User2      ctermbg=52
+autocmd InsertLeave * hi User2      ctermbg=236
+autocmd InsertLeave * hi User1      ctermbg=236
+autocmd InsertLeave * hi StatusLine ctermbg=236
+autocmd CmdwinEnter * hi StatusLine ctermbg=22
+autocmd CmdwinEnter * hi User1      ctermbg=22
+autocmd CmdwinEnter * hi User2      ctermbg=22
+autocmd CmdwinLeave * hi User2      ctermbg=236
+autocmd CmdwinLeave * hi User1      ctermbg=236
+autocmd CmdwinLeave * hi StatusLine ctermbg=236
+
 else
 
 hi rubyGlobalVariable       gui=none                   guifg=#5f8700
@@ -203,5 +197,19 @@ hi Error            gui=bold       guibg=#5f0000  guifg=#ffffff
 hi Todo             gui=bold       guibg=#afaf5f guifg=#000000
 
 hi OperatorCurlyBrackets gui=bold guifg=#5fafff
+
+" highlight modes
+autocmd InsertEnter * hi StatusLine guibg=#5f0000
+autocmd InsertEnter * hi User1      guibg=#5f0000
+autocmd InsertEnter * hi User2      guibg=#5f0000
+autocmd InsertLeave * hi User2      guibg=#303030
+autocmd InsertLeave * hi User1      guibg=#303030
+autocmd InsertLeave * hi StatusLine guibg=#303030
+autocmd CmdwinEnter * hi StatusLine guibg=#005f00
+autocmd CmdwinEnter * hi User1      guibg=#005f00
+autocmd CmdwinEnter * hi User2      guibg=#005f00
+autocmd CmdwinLeave * hi User2      guibg=#303030
+autocmd CmdwinLeave * hi User1      guibg=#303030
+autocmd CmdwinLeave * hi StatusLine guibg=#303030
 
 end
