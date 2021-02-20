@@ -24,13 +24,8 @@
 "   such that text files be displayed other than e.g. c sources
 " =============================================================================
 
-" NOTE: This colorscheme has been modified from the original. The changes are
-" primarily to add (or modify) 256-color xterm support, but may include other
-" changes also (e.g., bug fixes). Details can be found at:
-" http://github.com/KevinGoodsell/vim-xterm-colors
-
-set background=dark
 hi clear
+set background=dark
 if exists("syntax_on")
     syntax reset
 endif
@@ -170,41 +165,39 @@ endif
 "                             Color Definitions                            {{{1
 "==============================================================================
 
-hi Normal               guifg=#71D289   guibg=#004A41                   ctermfg=78      ctermbg=23 
-
 if version >= 700
-    hi SpellBad         guisp=#FF0000 ctermbg=88
-    hi SpellCap         guisp=#afaf00 ctermbg=58
-    hi SpellRare        guisp=#bf4040 ctermbg=90
-    hi SpellLocal       guisp=#00afaf                                                   ctermbg=30
-    hi Pmenu            guifg=#00ffff   guibg=#000000                   ctermfg=51      ctermbg=16
-    hi PmenuSel         guifg=#ffff00   guibg=#000000   gui=bold        ctermfg=226                     cterm=bold ctermbg=16
-    hi PmenuSbar                        guibg=#204d40                                   ctermbg=22
-    hi PmenuThumb       guifg=#38ff56                                   ctermfg=83
+    hi SpellBad         guisp=#FF0000
+    hi SpellCap         guisp=#afaf00
+    hi SpellRare        guisp=#bf4040
+    hi SpellLocal       guisp=#00afaf                                                   ctermbg=0
+    hi Pmenu            guifg=#00ffff   guibg=#000000                   ctermfg=51      ctermbg=0
+    hi PmenuSel         guifg=#ffff00   guibg=#000000   gui=bold        ctermfg=226                     cterm=bold
+    hi PmenuSbar                        guibg=#204d40                                   ctermbg=6
+    hi PmenuThumb       guifg=#38ff56                                   ctermfg=3
     hi CursorColumn                     guibg=#096354                                   ctermbg=29
     hi CursorLine                       guibg=#096354                                   ctermbg=29
-    hi Tabline          guifg=bg        guibg=fg        gui=NONE        ctermfg=bg    ctermbg=fg    cterm=NONE
-    hi TablineSel       guifg=#20012e   guibg=#00a675   gui=bold ctermbg=36 cterm=bold ctermfg=233
-    hi TablineFill      guifg=#689C7C ctermfg=72
-    hi MatchParen       guifg=#38ff56   guibg=#0000ff   gui=bold        ctermfg=83      ctermbg=21      cterm=bold
+    hi Tabline          guifg=bg        guibg=fg        gui=NONE        ctermfg=NONE    ctermbg=NONE    cterm=reverse,bold
+    hi TablineSel       guifg=#20012e   guibg=#00a675   gui=bold
+    hi TablineFill      guifg=#689C7C
+    hi MatchParen       guifg=#38ff56   guibg=#0000ff   gui=bold        ctermfg=14      ctermbg=21      cterm=bold
 endif
 "------------------------------------------------------------------------------
 
-"hi Comment             guifg=#00C5E7                                   ctermfg=44      
-hi Comment              guifg=#00C5E7                                   ctermfg=44
+"hi Comment             guifg=#00C5E7                                   ctermfg=39      
+hi Comment              guifg=#00C5E7                                   ctermfg=51
 
 "------------------------------------------------------------------------------
 " Constant Colors:
 "------------------------------------------------------------------------------
 "
 if s:FlatConstants
-  hi Constant           guifg=#7DDCDB                                   ctermfg=116
+  hi Constant           guifg=#7DDCDB                                   ctermfg=123
 else
-  hi Boolean            guifg=#7EDBD8                                   ctermfg=116
+  hi Boolean            guifg=#7EDBD8                                   ctermfg=123
   hi Character          guifg=#AFD000                                   ctermfg=148
-  hi Float              guifg=#AF87DF                                   ctermfg=140
+  hi Float              guifg=#AF87DF                                   ctermfg=141
   hi Number             guifg=#00A7F7                                   ctermfg=39
-  hi String             guifg=#00DF00                                   ctermfg=40
+  hi String             guifg=#00DF00                                   ctermfg=46
 endif
 
 "------------------------------------------------------------------------------
@@ -212,43 +205,43 @@ endif
 "------------------------------------------------------------------------------
 "
 if s:CurColor == "yellow"
-  hi Cursor             guifg=#000000   guibg=#EFEF00 ctermbg=226 ctermfg=16
+  hi Cursor             guifg=#000000   guibg=#EFEF00
 elseif s:CurColor == "red"
   " Note: Input cursor will be invisible on Error Group
-  hi Cursor             guifg=#00007F   guibg=#F70000 ctermbg=196 ctermfg=18
+  hi Cursor             guifg=#00007F   guibg=#F70000
 elseif s:CurColor == "blue"
-  hi Cursor             guifg=#00007F   guibg=#00EFEF ctermbg=51 ctermfg=18
+  hi Cursor             guifg=#00007F   guibg=#00EFEF
 elseif s:CurColor == "white"
-  hi Cursor             guifg=#000000   guibg=#FFFFFF ctermbg=231 ctermfg=16
+  hi Cursor             guifg=#000000   guibg=#FFFFFF
 endif
 "------------------------------------------------------------------------------
 
-hi DiffAdd              guifg=NONE      guibg=#136769                   ctermfg=NONE       ctermbg=29       cterm=NONE
-hi DiffDelete           guifg=NONE      guibg=#50694A                   ctermfg=NONE       ctermbg=65       cterm=NONE
-hi DiffChange           guifg=fg        guibg=#00463c   gui=None        ctermfg=fg       ctermbg=23       cterm=None
-hi DiffText             guifg=#7CFC94   guibg=#00463c   gui=bold        ctermfg=120       ctermbg=23       cterm=bold
-hi Directory            guifg=#25B9F8   guibg=NONE                                                      ctermfg=39 ctermbg=NONE
+hi DiffAdd              guifg=NONE      guibg=#136769                   ctermfg=4       ctermbg=7       cterm=NONE
+hi DiffDelete           guifg=NONE      guibg=#50694A                   ctermfg=1       ctermbg=7       cterm=NONE
+hi DiffChange           guifg=fg        guibg=#00463c   gui=None        ctermfg=4       ctermbg=2       cterm=NONE
+hi DiffText             guifg=#7CFC94   guibg=#00463c   gui=bold        ctermfg=4       ctermbg=3       cterm=NONE
+hi Directory            guifg=#25B9F8   guibg=NONE                                                      ctermfg=2
 
 "------------------------------------------------------------------------------
 " Error Colors:
 "------------------------------------------------------------------------------
 "
 if s:DarkError
-"  hi Error             guifg=#FF0000   guibg=#303800   gui=NONE        ctermfg=196       ctermbg=235     cterm=NONE
-  hi Error              guifg=NONE      guibg=#303800   gui=NONE        ctermfg=NONE    ctermbg=235     cterm=NONE
+"  hi Error             guifg=#FF0000   guibg=#303800   gui=NONE        ctermfg=9       ctermbg=236     cterm=NONE
+  hi Error              guifg=NONE      guibg=#303800   gui=NONE        ctermfg=NONE    ctermbg=236     cterm=NONE
 else
   if s:CurColor == "red"
     " Note: We need another background in this case to keep the cursor visible.
-    hi Error            guifg=#FF0000   guibg=#FFFF00   gui=bold        ctermfg=196      ctermbg=226       cterm=bold
+    hi Error            guifg=#FF0000   guibg=#FFFF00   gui=bold        ctermfg=11      ctermbg=9       cterm=NONE
   else
-    hi Error            guifg=#FFFF00   guibg=#FF0000   gui=NONE        ctermfg=226      ctermbg=196       cterm=NONE
+    hi Error            guifg=#FFFF00   guibg=#FF0000   gui=NONE        ctermfg=11      ctermbg=9       cterm=NONE
   endif
 endif
 "------------------------------------------------------------------------------
 
-hi ErrorMsg             guifg=#FFFFFF   guibg=#FF0000                   ctermfg=231       ctermbg=196
-hi FoldColumn           guifg=#00BBBB   guibg=#4E4E4E                   ctermfg=37      ctermbg=239
-hi Folded               guifg=#44DDDD   guibg=#4E4E4E                   ctermfg=80      ctermbg=239
+hi ErrorMsg             guifg=#FFFFFF   guibg=#FF0000                   ctermfg=7       ctermbg=1
+hi FoldColumn           guifg=#00BBBB   guibg=#4E4E4E                   ctermfg=14      ctermbg=240
+hi Folded               guifg=#44DDDD   guibg=#4E4E4E                   ctermfg=14      ctermbg=240
 hi Identifier           guifg=#FDAE5A                                   ctermfg=215                     cterm=NONE
 
 "------------------------------------------------------------------------------
@@ -257,12 +250,12 @@ hi Identifier           guifg=#FDAE5A                                   ctermfg=
 "
 if s:InvisibleIgnore
   " completely invisible
-  hi Ignore             guifg=bg        guibg=NONE                      ctermfg=bg ctermbg=NONE
-  hi NonText            guifg=bg        guibg=NONE                      ctermfg=bg ctermbg=NONE
+  hi Ignore             guifg=bg        guibg=NONE                      ctermfg=23
+  hi NonText            guifg=bg        guibg=NONE                      ctermfg=23
 else
   " nearly invisible
-  hi Ignore             guifg=#005FAF   guibg=NONE                      ctermfg=25 ctermbg=NONE
-  hi NonText            guifg=#005FAF   guibg=NONE                      ctermfg=25 ctermbg=NONE
+  hi Ignore             guifg=#005FAF   guibg=NONE                      ctermfg=26
+  hi NonText            guifg=#005FAF   guibg=NONE                      ctermfg=26
 endif
 "------------------------------------------------------------------------------
 
@@ -273,36 +266,38 @@ endif
 "------------------------------------------------------------------------------
 "
 if s:LNumUnderline
-  hi LineNr             guifg=#00FF00   guibg=#005080   gui=underline   ctermfg=46      ctermbg=24      cterm=underline
+  hi LineNr             guifg=#00FF00   guibg=#005080   gui=underline   ctermfg=84      ctermbg=24      cterm=underline
 else
-  hi LineNr             guifg=#00FF00   guibg=#005080                   ctermfg=46      ctermbg=24
+  hi LineNr             guifg=#00FF00   guibg=#005080                   ctermfg=84      ctermbg=24
 endif
 "------------------------------------------------------------------------------
 
-hi ModeMsg              guifg=#FFFFFF   guibg=#0000FF   gui=NONE        ctermfg=231       ctermbg=21       cterm=NONE
-hi MoreMsg              guifg=#FFFFFF   guibg=#00A261   gui=NONE        ctermfg=231       ctermbg=35      cterm=NONE
+hi ModeMsg              guifg=#FFFFFF   guibg=#0000FF   gui=NONE        ctermfg=7       ctermbg=4       cterm=NONE
+hi MoreMsg              guifg=#FFFFFF   guibg=#00A261   gui=NONE        ctermfg=7       ctermbg=28      cterm=NONE
+
+hi Normal               guifg=#71D289   guibg=#004A41                   ctermfg=84      ctermbg=23 
 
 "------------------------------------------------------------------------------
 " Preprocessor Variants:
 "------------------------------------------------------------------------------
 "
 if s:ColorPre == "red"
-  hi PreProc            guifg=#FF5F5F   guibg=bg                        ctermfg=203 ctermbg=bg
+  hi PreProc            guifg=#FF5F5F   guibg=bg                        ctermfg=203
 elseif s:ColorPre == "yellow"
-  hi PreProc            guifg=#AFFF00   guibg=bg                        ctermfg=154 ctermbg=bg
+  hi PreProc            guifg=#AFFF00   guibg=bg                        ctermfg=154
 elseif s:ColorPre == "blue"
-  hi PreProc            guifg=#918EE4   guibg=bg                        ctermfg=104 ctermbg=bg
+  hi PreProc            guifg=#918EE4   guibg=bg                        ctermfg=105
 endif
 "------------------------------------------------------------------------------
 
-hi Question             guifg=#E5E500   guibg=NONE      gui=NONE        ctermfg=184      ctermbg=NONE    cterm=NONE
+hi Question             guifg=#E5E500   guibg=NONE      gui=NONE        ctermfg=11      ctermbg=NONE    cterm=NONE
 
 "------------------------------------------------------------------------------
 " Search Stand Out Variants:
 "------------------------------------------------------------------------------
 "
 if s:SearchStandOut == 0
-  hi IncSearch          guifg=#D0D0D0   guibg=#206828   gui=NONE        ctermfg=252    ctermbg=22      cterm=NONE
+  hi IncSearch          guifg=#D0D0D0   guibg=#206828   gui=NONE        ctermfg=NONE    ctermbg=22      cterm=NONE
   hi Search             guifg=NONE      guibg=#212a81                   ctermfg=NONE    ctermbg=18
 elseif s:SearchStandOut == 1
   hi IncSearch          guifg=#D0D0D0   guibg=#206828   gui=underline   ctermfg=252     ctermbg=22      cterm=underline
@@ -313,24 +308,24 @@ elseif s:SearchStandOut == 2
 endif
 "------------------------------------------------------------------------------
 
-hi SignColumn           guifg=#00BBBB   guibg=#204d40 ctermbg=22 ctermfg=37
-hi Special              guifg=#00E0F2   guibg=NONE      gui=NONE        ctermfg=45 ctermbg=NONE cterm=NONE
-hi SpecialKey           guifg=#00F4F4   guibg=#266955 ctermbg=29 ctermfg=51
+hi SignColumn           guifg=#00BBBB   guibg=#204d40
+hi Special              guifg=#00E0F2   guibg=NONE      gui=NONE        ctermfg=45
+hi SpecialKey           guifg=#00F4F4   guibg=#266955
 
 "------------------------------------------------------------------------------
 " Statement Variants:
 "------------------------------------------------------------------------------
 "
 if s:BoldStatement
-  hi Statement          guifg=#DEDE00                   gui=bold        ctermfg=184                      cterm=bold
+  hi Statement          guifg=#DEDE00                   gui=bold        ctermfg=11                      cterm=bold
 else
-  hi Statement          guifg=#E4E300                   gui=NONE        ctermfg=184 cterm=NONE
+  hi Statement          guifg=#E4E300                   gui=NONE        ctermfg=11
 endif
 "------------------------------------------------------------------------------
 
-hi StatusLine           guifg=#000000   guibg=#7DCEAD   gui=NONE                        ctermbg=115      cterm=NONE ctermfg=16
-hi StatusLineNC         guifg=#245748   guibg=#689C7C   gui=NONE        ctermfg=238      ctermbg=72      cterm=NONE
-hi Title                guifg=#7CFC94   guibg=NONE      gui=bold        ctermfg=120                       cterm=bold ctermbg=NONE
+hi StatusLine           guifg=#000000   guibg=#7DCEAD   gui=NONE                        ctermbg=00      cterm=reverse
+hi StatusLineNC         guifg=#245748   guibg=#689C7C   gui=NONE        ctermfg=72      ctermbg=23      cterm=reverse
+hi Title                guifg=#7CFC94   guibg=NONE      gui=bold        ctermfg=2                       cterm=bold
 
 "------------------------------------------------------------------------------
 " Todo Variants:
@@ -338,22 +333,23 @@ hi Title                guifg=#7CFC94   guibg=NONE      gui=bold        ctermfg=
 "
 if s:TodoUnderline
   " Underlined
-  hi Todo               guifg=#AFD7D7   guibg=NONE      gui=underline   ctermfg=152     ctermbg=NONE    cterm=underline
+  hi Todo               guifg=#AFD7D7   guibg=NONE      gui=underline   ctermfg=159     ctermbg=NONE    cterm=underline
 else
   " Blue background
-  hi Todo               guifg=#00FFFF   guibg=#0000FF                   ctermfg=51      ctermbg=21
+  hi Todo               guifg=#00FFFF   guibg=#0000FF                   ctermfg=51      ctermbg=4
 endif
 "------------------------------------------------------------------------------
 
-hi Type                 guifg=#F269E4   guibg=bg        gui=NONE        ctermfg=206 ctermbg=bg cterm=NONE
+hi Type                 guifg=#F269E4   guibg=bg        gui=NONE        ctermfg=213
 hi Underlined                                           gui=underline                                   cterm=underline
-hi VertSplit            guifg=#245748   guibg=#689C7C   gui=NONE        ctermfg=238      ctermbg=72      cterm=NONE
-hi Visual                               guibg=#0B7260   gui=NONE ctermbg=29 cterm=NONE
-hi WarningMsg           guifg=#000087   guibg=#FFFF00                   ctermfg=18      ctermbg=226
-hi WildMenu             guifg=#20012e   guibg=#00a675   gui=bold        ctermfg=233    ctermbg=36    cterm=bold
+hi VertSplit            guifg=#245748   guibg=#689C7C   gui=NONE        ctermfg=72      ctermbg=23      cterm=reverse
+hi Visual                               guibg=#0B7260   gui=NONE
+hi WarningMsg           guifg=#000087   guibg=#FFFF00                   ctermfg=18      ctermbg=11
+hi WildMenu             guifg=#20012e   guibg=#00a675   gui=bold        ctermfg=NONE    ctermbg=NONE    cterm=bold
 "
-hi tkWidget             guifg=#D5B11C   guibg=bg        gui=bold        ctermfg=178                       cterm=bold ctermbg=bg
-hi tclBookends          guifg=#7CFC94   guibg=NONE      gui=bold        ctermfg=120                       cterm=bold ctermbg=NONE
+hi pythonPreCondit                                                      ctermfg=2                       cterm=NONE
+hi tkWidget             guifg=#D5B11C   guibg=bg        gui=bold        ctermfg=7                       cterm=bold
+hi tclBookends          guifg=#7CFC94   guibg=NONE      gui=bold        ctermfg=2                       cterm=bold
 
 " ------------------------------------------------------------------------------------------------
 " Custom HTML Groups:
@@ -366,14 +362,14 @@ hi htmlBold             guifg=#87FFD7                   gui=bold        ctermfg=
 hi htmlBoldItalic       guifg=#87D7EF                   gui=bold        ctermfg=117                     cterm=bold
 hi htmlBoldUnderline    guifg=#87FFD7                   gui=bold,underline ctermfg=122                  cterm=bold,underline
 hi htmlBoldUnderlineItalic guifg=#87D7EF                gui=bold,underline ctermfg=117                  cterm=bold,underline
-hi htmlH1               guifg=#00FF00   guibg=NONE      gui=bold,underline ctermfg=46                    cterm=bold,underline ctermbg=NONE
-hi htmlH2               guifg=#00FF00   guibg=NONE      gui=bold        ctermfg=46                       cterm=bold ctermbg=NONE
-hi htmlH3               guifg=#00FF00   guibg=NONE      gui=NONE        ctermfg=46 ctermbg=NONE cterm=NONE
-hi htmlH4               guifg=#00C700   guibg=NONE      gui=underline   ctermfg=40                      cterm=underline ctermbg=NONE
-hi htmlH5               guifg=#00C700   guibg=NONE      gui=NONE        ctermfg=40 ctermbg=NONE cterm=NONE
-hi htmlH6               guifg=#00A700   guibg=NONE      gui=underline   ctermfg=34                      cterm=underline ctermbg=NONE
-hi htmlItalic           guifg=#87D7D7                   gui=NONE        ctermfg=116 cterm=NONE
-hi htmlLink             guifg=#8787D7                   gui=underline   ctermfg=104                     cterm=underline
+hi htmlH1               guifg=#00FF00   guibg=NONE      gui=bold,underline ctermfg=2                    cterm=bold,underline
+hi htmlH2               guifg=#00FF00   guibg=NONE      gui=bold        ctermfg=2                       cterm=bold
+hi htmlH3               guifg=#00FF00   guibg=NONE      gui=NONE        ctermfg=2
+hi htmlH4               guifg=#00C700   guibg=NONE      gui=underline   ctermfg=34                      cterm=underline
+hi htmlH5               guifg=#00C700   guibg=NONE      gui=NONE        ctermfg=34
+hi htmlH6               guifg=#00A700   guibg=NONE      gui=underline   ctermfg=28                      cterm=underline
+hi htmlItalic           guifg=#87D7D7                   gui=NONE        ctermfg=116
+hi htmlLink             guifg=#8787D7                   gui=underline   ctermfg=105                     cterm=underline
 hi htmlUnderline                                        gui=underline                                   cterm=underline
 hi htmlUnderlineItalic  guifg=#87D7D7                   gui=underline   ctermfg=116                     cterm=underline
 
@@ -385,85 +381,79 @@ hi htmlUnderlineItalic  guifg=#87D7D7                   gui=underline   ctermfg=
 "
 " Indent level colors
 
-hi OL1                  guifg=#02AAFF                                   ctermfg=39
-hi OL2                  guifg=#02CAE9                                   ctermfg=44
-hi OL3                  guifg=#87D7D7                                   ctermfg=116
-hi OL4                  guifg=#87D7D7                                   ctermfg=116
-hi OL5                  guifg=#87D7D7                                   ctermfg=116
-hi OL6                  guifg=#87D7D7                                   ctermfg=116
-hi OL7                  guifg=#87D7D7                                   ctermfg=116
-hi OL8                  guifg=#87D7D7                                   ctermfg=116
-hi OL9                  guifg=#87D7D7                                   ctermfg=116
+hi OL1                  guifg=#02AAFF                                   ctermfg=33
+hi OL2                  guifg=#02CAE9                                   ctermfg=39
+hi OL3                  guifg=#87D7D7                                   ctermfg=44
+hi OL4                  guifg=#87D7D7                                   ctermfg=44
+hi OL5                  guifg=#87D7D7                                   ctermfg=44
+hi OL6                  guifg=#87D7D7                                   ctermfg=44
+hi OL7                  guifg=#87D7D7                                   ctermfg=44
+hi OL8                  guifg=#87D7D7                                   ctermfg=44
+hi OL9                  guifg=#87D7D7                                   ctermfg=44
 
 " colors for tags
-hi outlTags             guifg=#F269E4                                   ctermfg=206
+hi outlTags             guifg=#F269E4                                   ctermfg=213
         
 " color for body text
-hi BT1                  guifg=#71D289                                   ctermfg=78 
-hi BT2                  guifg=#71D289                                   ctermfg=78 
-hi BT3                  guifg=#71D289                                   ctermfg=78 
-hi BT4                  guifg=#71D289                                   ctermfg=78 
-hi BT5                  guifg=#71D289                                   ctermfg=78 
-hi BT6                  guifg=#71D289                                   ctermfg=78 
-hi BT7                  guifg=#71D289                                   ctermfg=78 
-hi BT8                  guifg=#71D289                                   ctermfg=78 
-hi BT9                  guifg=#71D289                                   ctermfg=78 
+hi BT1                  guifg=#71D289                                   ctermfg=84 
+hi BT2                  guifg=#71D289                                   ctermfg=84 
+hi BT3                  guifg=#71D289                                   ctermfg=84 
+hi BT4                  guifg=#71D289                                   ctermfg=84 
+hi BT5                  guifg=#71D289                                   ctermfg=84 
+hi BT6                  guifg=#71D289                                   ctermfg=84 
+hi BT7                  guifg=#71D289                                   ctermfg=84 
+hi BT8                  guifg=#71D289                                   ctermfg=84 
+hi BT9                  guifg=#71D289                                   ctermfg=84 
 
 " color for pre-formatted text
-hi PT1                  guifg=#7DDCDB                                   ctermfg=116
-hi PT2                  guifg=#7DDCDB                                   ctermfg=116
-hi PT3                  guifg=#7DDCDB                                   ctermfg=116
-hi PT4                  guifg=#7DDCDB                                   ctermfg=116
-hi PT5                  guifg=#7DDCDB                                   ctermfg=116
-hi PT6                  guifg=#7DDCDB                                   ctermfg=116
-hi PT7                  guifg=#7DDCDB                                   ctermfg=116
-hi PT8                  guifg=#7DDCDB                                   ctermfg=116
-hi PT9                  guifg=#7DDCDB                                   ctermfg=116
+hi PT1                  guifg=#7DDCDB                                   ctermfg=123
+hi PT2                  guifg=#7DDCDB                                   ctermfg=123
+hi PT3                  guifg=#7DDCDB                                   ctermfg=123
+hi PT4                  guifg=#7DDCDB                                   ctermfg=123
+hi PT5                  guifg=#7DDCDB                                   ctermfg=123
+hi PT6                  guifg=#7DDCDB                                   ctermfg=123
+hi PT7                  guifg=#7DDCDB                                   ctermfg=123
+hi PT8                  guifg=#7DDCDB                                   ctermfg=123
+hi PT9                  guifg=#7DDCDB                                   ctermfg=123
 
 " color for tables 
-hi TA1                  guifg=#918EE4                                   ctermfg=104
-hi TA2                  guifg=#918EE4                                   ctermfg=104
-hi TA3                  guifg=#918EE4                                   ctermfg=104
-hi TA4                  guifg=#918EE4                                   ctermfg=104
-hi TA5                  guifg=#918EE4                                   ctermfg=104
-hi TA6                  guifg=#918EE4                                   ctermfg=104
-hi TA7                  guifg=#918EE4                                   ctermfg=104
-hi TA8                  guifg=#918EE4                                   ctermfg=104
-hi TA9                  guifg=#918EE4                                   ctermfg=104
+hi TA1                  guifg=#918EE4                                   ctermfg=105
+hi TA2                  guifg=#918EE4                                   ctermfg=105
+hi TA3                  guifg=#918EE4                                   ctermfg=105
+hi TA4                  guifg=#918EE4                                   ctermfg=105
+hi TA5                  guifg=#918EE4                                   ctermfg=105
+hi TA6                  guifg=#918EE4                                   ctermfg=105
+hi TA7                  guifg=#918EE4                                   ctermfg=105
+hi TA8                  guifg=#918EE4                                   ctermfg=105
+hi TA9                  guifg=#918EE4                                   ctermfg=105
 
 " color for user text (wrapping)
-hi UT1                  guifg=#71D289                                   ctermfg=78
-hi UT2                  guifg=#71D289                                   ctermfg=78 
-hi UT3                  guifg=#71D289                                   ctermfg=78 
-hi UT4                  guifg=#71D289                                   ctermfg=78 
-hi UT5                  guifg=#71D289                                   ctermfg=78 
-hi UT6                  guifg=#71D289                                   ctermfg=78 
-hi UT7                  guifg=#71D289                                   ctermfg=78 
-hi UT8                  guifg=#71D289                                   ctermfg=78 
-hi UT9                  guifg=#71D289                                   ctermfg=78 
+hi UT1                  guifg=#71D289                                   ctermfg=84
+hi UT2                  guifg=#71D289                                   ctermfg=84 
+hi UT3                  guifg=#71D289                                   ctermfg=84 
+hi UT4                  guifg=#71D289                                   ctermfg=84 
+hi UT5                  guifg=#71D289                                   ctermfg=84 
+hi UT6                  guifg=#71D289                                   ctermfg=84 
+hi UT7                  guifg=#71D289                                   ctermfg=84 
+hi UT8                  guifg=#71D289                                   ctermfg=84 
+hi UT9                  guifg=#71D289                                   ctermfg=84 
         
 " color for user text (non-wrapping)
-hi UT1                  guifg=#71D289                                   ctermfg=78 
-hi UT2                  guifg=#71D289                                   ctermfg=78 
-hi UT3                  guifg=#71D289                                   ctermfg=78 
-hi UT4                  guifg=#71D289                                   ctermfg=78 
-hi UT5                  guifg=#71D289                                   ctermfg=78 
-hi UT6                  guifg=#71D289                                   ctermfg=78 
-hi UT7                  guifg=#71D289                                   ctermfg=78 
-hi UT8                  guifg=#71D289                                   ctermfg=78 
-hi UT9                  guifg=#71D289                                   ctermfg=78
+hi UT1                  guifg=#71D289                                   ctermfg=84 
+hi UT2                  guifg=#71D289                                   ctermfg=84 
+hi UT3                  guifg=#71D289                                   ctermfg=84 
+hi UT4                  guifg=#71D289                                   ctermfg=84 
+hi UT5                  guifg=#71D289                                   ctermfg=84 
+hi UT6                  guifg=#71D289                                   ctermfg=84 
+hi UT7                  guifg=#71D289                                   ctermfg=84 
+hi UT8                  guifg=#71D289                                   ctermfg=84 
+hi UT9                  guifg=#71D289                                   ctermfg=84
         
 " colors for experimental spelling error highlighting
 " this only works for spellfix.vim with will be cease to exist soon
-hi spellErr             guifg=#E4E300                   gui=underline   ctermfg=184                      cterm=underline
-hi BadWord              guifg=#E4E300                   gui=underline   ctermfg=184                      cterm=underline
+hi spellErr             guifg=#E4E300                   gui=underline   ctermfg=11                      cterm=underline
+hi BadWord              guifg=#E4E300                   gui=underline   ctermfg=11                      cterm=underline
 
-
-hi CursorLine gui=NONE cterm=NONE
-hi DiffDelete gui=bold ctermbg=65 cterm=bold
-hi NonText gui=bold cterm=bold
-hi Underlined guifg=#80a0ff ctermfg=111
-hi lCursor guibg=fg guifg=bg ctermbg=fg ctermfg=bg
 
 "==============================================================================
 "                              Options Processor                           {{{1

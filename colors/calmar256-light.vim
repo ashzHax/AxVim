@@ -9,11 +9,6 @@
 " set t_Co=256
 " in your vimrc"}}}
 
-" NOTE: This colorscheme has been modified from the original. The changes are
-" primarily to add (or modify) 256-color xterm support, but may include other
-" changes also (e.g., bug fixes). Details can be found at:
-" http://github.com/KevinGoodsell/vim-xterm-colors
-
 " {{{ t_Co=256 is set - check 
 if &t_Co != 256 && ! has("gui_running")
     echomsg ""
@@ -98,7 +93,7 @@ let s:colors256 = [
             \ ["Title",         "bold", "18",   "",     "",         ""   ],
             \ ["Visual",        "",     "",     "220",  "",         ""   ],
             \ ["Comment",       "",     "21",   "255",  "",         ""   ],
-            \ ["Constant",      "",     "58",   "",     "",         ""   ],
+            \ ["Costant",       "",     "58",   "",     "",         ""   ],
             \ ["String",        "",     "160",  "",     "",         ""   ],
             \ ["Error",         "",     "130",  "",     "",         ""   ],
             \ ["Identifier",    "",     "31",   "",     "",         ""   ],
@@ -117,12 +112,12 @@ let s:colorvim7 = [
             \ ["Pmenu",         "",     "229",  "29",   "",         ""   ],
             \ ["PmenuSel",      "bold", "232",  "226",  "",         ""   ],
             \ ["PmenuSbar",     "",     "16",   "119",  "",         ""   ],
-            \ ["PmenuThumb",    "",     "16",   "226",  "",         ""   ],
+            \ ["PmenuThumb",    "",     "16",   "11",   "",         ""   ],
             \ ["SpellBad",      "undercurl", "","",     "undercurl","160"  ],
             \ ["SpellRare",     "",     "",     "228",  "",         ""   ],
             \ ["SpellLocal",    "",     "",     "224",  "",         ""   ],
             \ ["SpellCap",      "",     "",     "247",  "",         ""   ],
-            \ ["MatchParen",    "bold", "231",  "22",   "",         ""   ],
+            \ ["MatchParen",    "bold", "15",   "22",   "",         ""   ],
             \ ["TabLine",       "",     "252",  "22",   "",         ""   ],
             \ ["TabLineSel",    "bold", "253",  "30",   "",         ""   ],
             \ ["TabLineFill",   "",     "247",  "16",   "",         ""   ]]
@@ -162,7 +157,7 @@ endfunction
 "
 function! s:guisetcolor(colarg)
     " if gui-style is empty use (c)term-style also for gui
-        if a:colarg[4] == "NONE"
+        if a:colarg[4] == ""
             let guival = a:colarg[1]
         else
             let guival = a:colarg[4]

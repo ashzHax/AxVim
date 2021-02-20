@@ -6,11 +6,6 @@
 " works on xterms with 88 or 256 colors. The algorithm for approximating the
 " GUI colors with the xterm palette is from desert256.vim by Henry So Jr.
 
-" NOTE: This colorscheme has been modified from the original. The changes are
-" primarily to add (or modify) 256-color xterm support, but may include other
-" changes also (e.g., bug fixes). Details can be found at:
-" http://github.com/KevinGoodsell/vim-xterm-colors
-
 set background=dark
 
 if version > 580
@@ -283,7 +278,7 @@ call <SID>X("Function",		"caeb82",	"",			"none")
 call <SID>X("PreProc",		"e5786d",	"",			"none")
 call <SID>X("Type",			"caeb82",	"",			"none")
 call <SID>X("Special",		"ffdead",	"",			"none")
-call <SID>X("Todo",			"857b6f",	"ffff00",	"italic")
+call <SID>X("Todo",			"857b6f",	"",			"italic")
 			"Underlined
 			"Error
 			"Ignore
@@ -291,24 +286,6 @@ call <SID>X("Todo",			"857b6f",	"ffff00",	"italic")
 hi! link VisualNOS	Visual
 hi! link NonText	LineNr
 hi! link FoldColumn	Folded
-
-" Originally missing
-call <SID>X("Directory", "00ffff", "", "")
-call <SID>X("MoreMsg", "2e8b57", "", "bold")
-call <SID>X("Question", "00ff00", "", "bold")
-call <SID>X("DiffAdd", "", "00008b", "")
-call <SID>X("DiffChange", "", "8b008b", "")
-call <SID>X("DiffDelete", "0000ff", "008b8b", "bold")
-call <SID>X("DiffText", "", "ff0000", "bold")
-call <SID>X("SignColumn", "00ffff", "bebebe", "")
-call <SID>X("TabLine", "cccccc", "a9a9a9", "")
-call <SID>X("Underlined", "80a0ff", "", "")
-call <SID>X("Ignore", "242424", "", "")
-call <SID>X("Error", "ffffff", "ff0000", "")
-hi SpellBad ctermbg=88
-hi SpellCap ctermbg=19
-hi SpellRare ctermbg=90
-hi SpellLocal ctermbg=30
 
 " delete functions {{{
 delf <SID>X

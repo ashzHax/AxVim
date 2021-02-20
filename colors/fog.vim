@@ -7,11 +7,6 @@
 " help pick things out in the files they edit, but doesn't want
 " **C**O**N**T**R**A**S**T**!
 
-" NOTE: This colorscheme has been modified from the original. The changes are
-" primarily to add (or modify) 256-color xterm support, but may include other
-" changes also (e.g., bug fixes). Details can be found at:
-" http://github.com/KevinGoodsell/vim-xterm-colors
-
 set background=light
 
 hi clear
@@ -22,132 +17,154 @@ endif
 
 let colors_name = "fog"
 
+hi Normal		ctermbg=White		ctermfg=Black
 " 660066 = darkish purple
-hi Normal		guifg=#660066		guibg=grey80 ctermbg=252 ctermfg=53
+hi Normal		guifg=#660066		guibg=grey80
 
 hi NonText		term=bold
-hi NonText		gui=bold			guifg=LightBlue			guibg=grey80 ctermbg=252 cterm=bold ctermfg=152
+hi NonText		ctermfg=LightBlue
+hi NonText		gui=bold			guifg=LightBlue			guibg=grey80
 
+hi Comment		ctermfg=DarkGrey	ctermbg=White
 " 444499 = darkish blue grey
-hi Comment		guifg=#444499 ctermfg=60
+hi Comment		guifg=#444499
 
 hi Constant		term=underline
-hi Constant		guifg=#7070a0 ctermfg=61
+hi Constant		ctermfg=Magenta
+hi Constant		guifg=#7070a0
 
 hi Statement	term=bold
-hi Statement	guifg=DarkGreen		gui=bold cterm=bold ctermfg=22
+hi Statement	cterm=bold			ctermfg=DarkGreen		ctermbg=White
+hi Statement	guifg=DarkGreen		gui=bold
 
-hi identifier	guifg=DarkGreen ctermfg=22
+hi identifier	ctermfg=DarkGreen
+hi identifier	guifg=DarkGreen
 
-hi preproc		guifg=#408040 ctermfg=65
+hi preproc		ctermfg=DarkGreen
+hi preproc		guifg=#408040
 
-hi type			guifg=DarkBlue ctermfg=18
+hi type			ctermfg=DarkBlue
+hi type			guifg=DarkBlue
 
-hi label		guifg=#c06000 ctermfg=130
+hi label		ctermfg=yellow
+hi label		guifg=#c06000
 
-hi operator		guifg=DarkGreen		gui=bold cterm=bold ctermfg=22
+hi operator		ctermfg=darkYellow
+hi operator		guifg=DarkGreen		gui=bold
 
-hi StorageClass	guifg=#a02060			gui=bold cterm=bold ctermfg=125
+hi StorageClass	ctermfg=DarkRed			ctermbg=White
+hi StorageClass	guifg=#a02060			gui=bold
 
-hi Number		guifg=Blue ctermfg=21
+hi Number		ctermfg=Blue		ctermbg=White
+hi Number		guifg=Blue
 
 hi Special		term=bold
-hi Special		guifg=#aa8822 ctermfg=136
+hi Special		ctermfg=LightRed
+hi Special		guifg=#aa8822
 
-hi Cursor		guibg=#880088		guifg=LightGrey ctermbg=90 ctermfg=252
+hi Cursor		ctermbg=DarkMagenta
+hi Cursor		guibg=#880088		guifg=LightGrey
 
-hi lCursor		guibg=Cyan			guifg=Black ctermbg=51 ctermfg=16
+hi lCursor		guibg=Cyan			guifg=Black
 
 hi ErrorMsg		term=standout
-hi ErrorMsg		guibg=DarkRed		guifg=White ctermbg=88 ctermfg=231
+hi ErrorMsg		ctermbg=DarkRed		ctermfg=White
+hi ErrorMsg		guibg=DarkRed		guifg=White
 
 hi DiffText		term=reverse
-hi DiffText		gui=bold			guibg=DarkRed ctermbg=88 cterm=bold
+hi DiffText		cterm=bold			ctermbg=DarkRed
+hi DiffText		gui=bold			guibg=DarkRed
 
 hi Directory	term=bold
-hi Directory	guifg=Red gui=underline cterm=underline ctermfg=196
+hi Directory	ctermfg=LightRed
+hi Directory	guifg=Red gui=underline
 
 hi LineNr		term=underline
-hi LineNr		guifg=#ccaa22 ctermfg=178
+hi LineNr		ctermfg=Yellow
+hi LineNr		guifg=#ccaa22
 
 hi MoreMsg		term=bold
-hi MoreMsg		gui=bold			guifg=SeaGreen cterm=bold ctermfg=29
+hi MoreMsg		ctermfg=LightGreen
+hi MoreMsg		gui=bold			guifg=SeaGreen
 
 hi Question		term=standout
-hi Question		gui=bold			guifg=DarkGreen cterm=bold ctermfg=22
+hi Question		ctermfg=LightGreen
+hi Question		gui=bold			guifg=DarkGreen
 
 hi Search		term=reverse
-hi Search		guibg=#887722		guifg=Black ctermbg=100 ctermfg=16
+hi Search		ctermbg=DarkYellow	ctermfg=Black
+hi Search		guibg=#887722		guifg=Black
 
 hi SpecialKey	term=bold
-hi SpecialKey	guifg=Blue ctermfg=21
+hi SpecialKey	ctermfg=LightBlue
+hi SpecialKey	guifg=Blue
 
-hi SpecialChar	guifg=DarkGrey		gui=bold cterm=bold ctermfg=248
+hi SpecialChar	ctermfg=DarkGrey	ctermbg=White
+hi SpecialChar	guifg=DarkGrey		gui=bold
 
 hi Title		term=bold
-hi Title		gui=underline			guifg=DarkMagenta cterm=underline ctermfg=90
+hi Title		ctermfg=LightMagenta
+hi Title		gui=underline			guifg=DarkMagenta
 
 hi WarningMsg	term=standout
-hi WarningMsg	guifg=DarkBlue		guibg=#9999cc ctermbg=104 ctermfg=18
+hi WarningMsg	ctermfg=LightRed
+hi WarningMsg	guifg=DarkBlue		guibg=#9999cc
 
 hi WildMenu		term=standout
-hi WildMenu		guibg=Yellow		guifg=Black gui=underline ctermbg=226 cterm=underline ctermfg=16
+hi WildMenu		ctermbg=Yellow		ctermfg=Black
+hi WildMenu		guibg=Yellow		guifg=Black gui=underline
 
 hi Folded		term=standout
-hi Folded		guibg=LightGrey		guifg=DarkBlue ctermbg=252 ctermfg=18
+hi Folded		ctermbg=LightGrey	ctermfg=DarkBlue
+hi Folded		guibg=LightGrey		guifg=DarkBlue
 
 hi FoldColumn	term=standout
-hi FoldColumn	guibg=Grey			guifg=DarkBlue ctermbg=250 ctermfg=18
+hi FoldColumn	ctermbg=LightGrey	ctermfg=DarkBlue
+hi FoldColumn	guibg=Grey			guifg=DarkBlue
 
 hi DiffAdd		term=bold
-hi DiffAdd		guibg=DarkBlue ctermbg=18
+hi DiffAdd		ctermbg=DarkBlue
+hi DiffAdd		guibg=DarkBlue
 
 hi DiffChange	term=bold
-hi DiffChange	guibg=DarkMagenta ctermbg=90
+hi DiffChange	ctermbg=DarkMagenta
+hi DiffChange	guibg=DarkMagenta
 
 hi DiffDelete	term=bold
-hi DiffDelete	gui=bold			guifg=Blue			guibg=DarkCyan ctermbg=30 cterm=bold ctermfg=21
+hi DiffDelete	ctermfg=Blue		ctermbg=DarkCyan
+hi DiffDelete	gui=bold			guifg=Blue			guibg=DarkCyan
 
-hi Ignore		guifg=grey90 ctermfg=254
+hi Ignore		ctermfg=LightGrey
+hi Ignore		guifg=grey90
 
 hi IncSearch	term=reverse
-hi IncSearch	gui=reverse cterm=reverse
+hi IncSearch	cterm=reverse
+hi IncSearch	gui=reverse
 
 hi ModeMsg		term=bold
-hi ModeMsg		gui=bold cterm=bold
+hi ModeMsg		cterm=bold
+hi ModeMsg		gui=bold
 
 hi StatusLine	term=reverse,bold
-hi StatusLine	gui=reverse,bold cterm=reverse,bold
+hi StatusLine	cterm=reverse,bold
+hi StatusLine	gui=reverse,bold
 
 hi StatusLineNC	term=reverse
-hi StatusLineNC	gui=reverse cterm=reverse
+hi StatusLineNC	cterm=reverse
+hi StatusLineNC	gui=reverse
 
 hi VertSplit	term=reverse
-hi VertSplit	gui=reverse cterm=reverse
+hi VertSplit	cterm=reverse
+hi VertSplit	gui=reverse
 
 hi Visual		term=reverse
-hi Visual		gui=reverse			guifg=DarkGrey		guibg=fg ctermbg=fg cterm=reverse ctermfg=248
+hi Visual		cterm=reverse
+hi Visual		gui=reverse			guifg=DarkGrey		guibg=fg
 
 hi VisualNOS	term=underline,bold
-hi VisualNOS	gui=underline,bold cterm=underline,bold
+hi VisualNOS	cterm=underline,bold
+hi VisualNOS	gui=underline,bold
 
-hi Todo			gui=reverse cterm=reverse
-
-hi CursorColumn guibg=grey90 ctermbg=254
-hi CursorLine gui=NONE guibg=grey90 ctermbg=254 cterm=NONE
-hi Error guibg=red guifg=white ctermbg=196 ctermfg=231
-hi MatchParen guibg=cyan ctermbg=51
-hi Pmenu guibg=lightmagenta ctermbg=219
-hi PmenuSbar guibg=grey ctermbg=250
-hi PmenuSel guibg=grey ctermbg=250
-hi SignColumn guibg=grey guifg=darkblue ctermbg=250 ctermfg=18
-hi SpellBad guibg=NONE ctermbg=217
-hi SpellCap guibg=NONE ctermbg=153
-hi SpellLocal guibg=NONE ctermbg=159
-hi SpellRare guibg=NONE ctermbg=219
-hi TabLine guibg=lightgrey guifg=NONE ctermbg=252 ctermfg=NONE
-hi Todo guibg=yellow guifg=blue ctermbg=226 ctermfg=21
-hi Type gui=bold cterm=bold
-hi Underlined guifg=slateblue ctermfg=62
+hi Todo			gui=reverse
 
 " vim: sw=2

@@ -19,11 +19,6 @@
 " converting color names to #rrggbb form, but decided it was just not worth
 " the effort.  Maybe someone seeing this may decide otherwise...
 
-" NOTE: This colorscheme has been modified from the original. The changes are
-" primarily to add (or modify) 256-color xterm support, but may include other
-" changes also (e.g., bug fixes). Details can be found at:
-" http://github.com/KevinGoodsell/vim-xterm-colors
-
 set background=dark
 if version > 580
     " no guarantees for version 5.8 and below, but this makes it stop
@@ -262,14 +257,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("IncSearch", "708090", "f0e68c", "")
     "LineNr
     call <SID>X("ModeMsg", "daa520", "", "")
-    call <SID>X("MoreMsg", "2e8b57", "", "bold")
+    call <SID>X("MoreMsg", "2e8b57", "", "")
     call <SID>X("NonText", "addbe7", "000000", "bold")
-    call <SID>X("Question", "00ff7f", "", "bold")
+    call <SID>X("Question", "00ff7f", "", "")
     call <SID>X("Search", "f5deb3", "cd853f", "")
     call <SID>X("SpecialKey", "9acd32", "", "")
     call <SID>X("StatusLine", "c2bfa5", "000000", "reverse")
     call <SID>X("StatusLineNC", "c2bfa5", "7f7f7f", "reverse")
-    call <SID>X("Title", "cd5c5c", "", "bold")
+    call <SID>X("Title", "cd5c5c", "", "")
     call <SID>X("Visual", "6b8e23", "f0e68c", "reverse")
     "VisualNOS
     call <SID>X("WarningMsg", "fa8072", "", "")
@@ -290,27 +285,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Ignore", "666666", "", "")
     "Error
     call <SID>X("Todo", "ff4500", "eeee00", "")
-
-    " Originally missing
-    call <SID>X("ErrorMsg", "ffffff", "ff0000", "")
-    call <SID>X("LineNr", "ffff00", "", "")
-    call <SID>X("WildMenu", "000000", "ffff00", "")
-    call <SID>X("DiffAdd", "", "00008b", "")
-    call <SID>X("DiffChange", "", "8b008b", "")
-    call <SID>X("DiffDelete", "0000ff", "008b8b", "bold")
-    call <SID>X("DiffText", "", "ff0000", "bold")
-    call <SID>X("SignColumn", "00ffff", "bebebe", "")
-    call <SID>X("Pmenu", "", "ff00ff", "")
-    call <SID>X("TabLine", "cccccc", "a9a9a9", "")
-    call <SID>X("CursorColumn", "", "666666", "")
-    call <SID>X("CursorLine", "", "666666", "NONE")
-    call <SID>X("MatchParen", "", "008b8b", "")
-    call <SID>X("Underlined", "80a0ff", "", "underline")
-    call <SID>X("Error", "ffffff", "ff0000", "")
-    hi SpellBad ctermbg=88
-    hi SpellCap ctermbg=19
-    hi SpellRare ctermbg=90
-    hi SpellLocal ctermbg=30
 
     " delete functions {{{
     delf <SID>X

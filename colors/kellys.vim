@@ -16,10 +16,6 @@
 "         0.1:	2008.11.28
 "       		initial version
 
-" NOTE: This colorscheme has been modified from the original. The changes are
-" primarily to add (or modify) 256-color xterm support, but may include other
-" changes also (e.g., bug fixes). Details can be found at:
-" http://github.com/KevinGoodsell/vim-xterm-colors
 
 set background=dark
 
@@ -44,33 +40,65 @@ let colors_name = "kellys"
 
 " tabline
 
-	hi Comment		guifg=#67686b	guibg=#2a2b2f	gui=none ctermbg=236 cterm=none ctermfg=242
-	hi Cursor 		guifg=#2a2b2f	guibg=#e1e0e5	gui=none ctermbg=254 cterm=none ctermfg=236
-	hi Constant 	guifg=#d1c79e	guibg=#2a2b2f	gui=none ctermbg=236 cterm=none ctermfg=187
-	hi CursorLine		          	guibg=#303132	gui=none ctermbg=236 cterm=none
-	hi DiffAdd		guifg=#2a2b2f	guibg=#9ab2c8	gui=none ctermbg=110 cterm=none ctermfg=236
-	hi DiffChange	guifg=#2a2b2f	guibg=#d1c79e	gui=none ctermbg=187 cterm=none ctermfg=236
-	hi DiffDelete	guifg=#67686b	guibg=#2a2b2f	gui=none ctermbg=236 cterm=none ctermfg=242
-	hi DiffText		guifg=#9d0e15	guibg=#d1c79e	gui=none ctermbg=187 cterm=none ctermfg=124
-	hi Folded 		guifg=#2a2b2f	guibg=#67686b	gui=none ctermbg=242 cterm=none ctermfg=236
-	hi MatchParen	guifg=#d1d435	guibg=#2a2b2f	gui=bold,underline ctermbg=236 cterm=bold,underline ctermfg=185
-	hi ModeMsg		guifg=#e1e0e5	guibg=#2a2b2f	gui=bold ctermbg=236 cterm=bold ctermfg=254
-	hi Normal 		guifg=#e1e0e5	guibg=#2a2b2f	gui=none ctermbg=236 cterm=none ctermfg=254
-	hi Pmenu		guifg=#2a2b2f	guibg=#9ab2c8	gui=none ctermbg=110 cterm=none ctermfg=236
-	hi PmenuSel		guifg=#2a2b2f	guibg=#62acce	gui=bold ctermbg=74 cterm=bold ctermfg=236
-	hi PmenuSbar	guifg=#2a2b2f	guibg=#2a2b2f	gui=none ctermbg=236 cterm=none ctermfg=236
-	hi PmenuThumb	guifg=#2a2b2f	guibg=#62acce	gui=none ctermbg=74 cterm=none ctermfg=236
-	hi PreProc		guifg=#d1d435	guibg=#2a2b2f	gui=none ctermbg=236 cterm=none ctermfg=185 
-	hi Search		guifg=#2a2b2f	guibg=#e1e0e5	gui=none ctermbg=254 cterm=none ctermfg=236
-	hi Special		guifg=#9ab2c8	guibg=#2a2b2f	gui=none ctermbg=236 cterm=none ctermfg=110
-	hi Statement	guifg=#62acce	guibg=#2a2b2f	gui=bold ctermbg=236 cterm=bold ctermfg=74
-	hi StatusLine 	guifg=#2a2b2f	guibg=#62acce	gui=bold ctermbg=74 cterm=bold ctermfg=236
-	hi StatusLineNC guifg=#2a2b2f	guibg=#e1e0e5	gui=none ctermbg=254 cterm=none ctermfg=236
-	hi Todo 		guifg=#e1e0e5	guibg=#9d0e15	gui=bold ctermbg=124 cterm=bold ctermfg=254
-	hi Type 		guifg=#e6ac32	guibg=#2a2b2f	gui=none ctermbg=236 cterm=none ctermfg=179
-	hi Underlined	guifg=#e1e0e5	guibg=#2a2b2f	gui=underline ctermbg=236 cterm=underline ctermfg=254
-	hi Visual		guifg=#2a2b2f	guibg=#e1e0e5	gui=none ctermbg=254 cterm=none ctermfg=236
-	hi Wildmenu		guifg=#62acce	guibg=#2a2b2f	gui=bold ctermbg=236 cterm=bold ctermfg=74
+if has("gui_running")
+	hi Comment		guifg=#67686b	guibg=#2a2b2f	gui=none
+	hi Cursor 		guifg=#2a2b2f	guibg=#e1e0e5	gui=none
+	hi Constant 	guifg=#d1c79e	guibg=#2a2b2f	gui=none
+	hi CursorLine		          	guibg=#303132	gui=none
+	hi DiffAdd		guifg=#2a2b2f	guibg=#9ab2c8	gui=none
+	hi DiffChange	guifg=#2a2b2f	guibg=#d1c79e	gui=none
+	hi DiffDelete	guifg=#67686b	guibg=#2a2b2f	gui=none
+	hi DiffText		guifg=#9d0e15	guibg=#d1c79e	gui=none
+	hi Folded 		guifg=#2a2b2f	guibg=#67686b	gui=none
+	hi MatchParen	guifg=#d1d435	guibg=#2a2b2f	gui=bold,underline
+	hi ModeMsg		guifg=#e1e0e5	guibg=#2a2b2f	gui=bold
+	hi Normal 		guifg=#e1e0e5	guibg=#2a2b2f	gui=none
+	hi Pmenu		guifg=#2a2b2f	guibg=#9ab2c8	gui=none
+	hi PmenuSel		guifg=#2a2b2f	guibg=#62acce	gui=bold
+	hi PmenuSbar	guifg=#2a2b2f	guibg=#2a2b2f	gui=none
+	hi PmenuThumb	guifg=#2a2b2f	guibg=#62acce	gui=none
+	hi PreProc		guifg=#d1d435	guibg=#2a2b2f	gui=none 
+	hi Search		guifg=#2a2b2f	guibg=#e1e0e5	gui=none
+	hi Special		guifg=#9ab2c8	guibg=#2a2b2f	gui=none
+	hi Statement	guifg=#62acce	guibg=#2a2b2f	gui=bold
+	hi StatusLine 	guifg=#2a2b2f	guibg=#62acce	gui=bold
+	hi StatusLineNC guifg=#2a2b2f	guibg=#e1e0e5	gui=none
+	hi Todo 		guifg=#e1e0e5	guibg=#9d0e15	gui=bold
+	hi Type 		guifg=#e6ac32	guibg=#2a2b2f	gui=none
+	hi Underlined	guifg=#e1e0e5	guibg=#2a2b2f	gui=underline
+	hi Visual		guifg=#2a2b2f	guibg=#e1e0e5	gui=none
+	hi Wildmenu		guifg=#62acce	guibg=#2a2b2f	gui=bold
+else
+	if &t_Co == 256
+		hi Comment		ctermfg=239	ctermbg=235	cterm=none
+		hi Cursor 		ctermfg=235	ctermbg=254	cterm=none
+		hi Constant 	ctermfg=144	ctermbg=235	cterm=none
+		hi CursorLine		       	ctermbg=236	cterm=none
+		hi DiffAdd		ctermfg=235	ctermbg=74	cterm=none
+		hi DiffChange	ctermfg=235	ctermbg=144	cterm=none
+		hi DiffDelete	ctermfg=239	ctermbg=235	cterm=none
+		hi DiffText		ctermfg=124	ctermbg=144	cterm=none
+		hi Folded 		ctermfg=239	ctermbg=235	cterm=none
+		hi MatchParen	ctermfg=184	ctermbg=235	cterm=bold,underline
+		hi ModeMsg		ctermfg=254	ctermbg=235	cterm=bold
+		hi Normal 		ctermfg=254	ctermbg=235	cterm=none
+		hi Pmenu		ctermfg=235	ctermbg=74	cterm=none
+		hi PmenuSel		ctermfg=235	ctermbg=81	cterm=bold
+		hi PmenuSbar	ctermfg=235	ctermbg=235	cterm=none
+		hi PmenuThumb	ctermfg=235	ctermbg=81	cterm=none
+		hi PreProc		ctermfg=184	ctermbg=235	cterm=none 
+		hi Search		ctermfg=235	ctermbg=254	cterm=none
+		hi Special		ctermfg=74	ctermbg=235	cterm=none
+		hi Statement	ctermfg=81	ctermbg=235	cterm=none
+		hi StatusLine 	ctermfg=235	ctermbg=81	cterm=bold
+		hi StatusLineNC ctermfg=235	ctermbg=254	cterm=none
+		hi Todo 		ctermfg=254	ctermbg=124	cterm=bold
+		hi Type 		ctermfg=178	ctermbg=234	cterm=none
+		hi Underlined	ctermfg=254	ctermbg=234	cterm=underline
+		hi Visual		ctermfg=235	ctermbg=254	cterm=none
+		hi Wildmenu		ctermfg=81	ctermbg=234	cterm=bold
+	endif
+endif
 
 hi! link Boolean		Constant
 hi! link Character		Constant
@@ -206,6 +234,3 @@ hi! link xmlEndTag			Statement
 hi! link xmlProcessingDelim	PreProc
 hi! link xmlNamespace		PreProc
 hi! link xmlTagName			Statement
-
-hi TabLine guibg=darkgrey guifg=NONE ctermbg=248 ctermfg=NONE
-hi lCursor guibg=fg guifg=bg ctermbg=fg ctermfg=bg

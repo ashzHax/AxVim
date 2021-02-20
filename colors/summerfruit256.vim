@@ -12,11 +12,6 @@
 "
 " The original "summerfruit" color scheme and "desert256" are available from vim.org.
 
-" NOTE: This colorscheme has been modified from the original. The changes are
-" primarily to add (or modify) 256-color xterm support, but may include other
-" changes also (e.g., bug fixes). Details can be found at:
-" http://github.com/KevinGoodsell/vim-xterm-colors
-
 set background=light
 if version > 580
     " no guarantees for version 5.8 and below, but this makes it stop
@@ -233,17 +228,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
             exec "hi " . a:group . " guibg=#" . a:bg . " ctermbg=" . <SID>rgb(a:bg)
         endif
         if a:attr != ""
-            exec "hi " . a:group . " gui=" . a:attr
-            if a:attr != "italic"
-                exec "hi " . a:group . " cterm=" . a:attr
-            endif
+            exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
         endif
     endfun
     " }}}
 
     " Global
     call <SID>X("Normal", "000000", "ffffff", "")
-    call <SID>X("NonText", "438ec3", "b7dce8", "bold")
+    call <SID>X("NonText", "438ec3", "b7dce8", "")
 
     " Search
     call <SID>X("Search", "800000", "ffae00", "")
@@ -256,25 +248,25 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Folded", "3c78a2", "c3daea", "")
     call <SID>X("IncSearch", "708090", "f0e68c", "")
     call <SID>X("Pmenu", "ffffff", "cb2f27", "")
-    call <SID>X("SignColumn", "00008b", "bebebe", "")
+    call <SID>X("SignColumn", "", "", "")
     call <SID>X("CursorLine", "", "c0d9eb", "")
     call <SID>X("LineNr", "eeeeee", "438ec3", "bold")
     call <SID>X("MatchParen", "", "", "")
 
     " Specials
     call <SID>X("Todo", "e50808", "dbf3cd", "bold")
-    call <SID>X("Title", "000000", "", "bold")
+    call <SID>X("Title", "000000", "", "")
     call <SID>X("Special", "fd8900", "", "")
 
     " Syntax Elements
     call <SID>X("String", "0086d2", "", "")
     call <SID>X("Constant", "0086d2", "", "")
     call <SID>X("Number", "0086f7", "", "")
-    call <SID>X("Statement", "fb660a", "", "bold")
+    call <SID>X("Statement", "fb660a", "", "")
     call <SID>X("Function", "ff0086", "", "")
     call <SID>X("PreProc", "ff0007", "", "")
     call <SID>X("Comment", "22a21f", "", "bold")
-    call <SID>X("Type", "70796b", "", "bold")
+    call <SID>X("Type", "70796b", "", "")
     call <SID>X("Error", "ffffff", "d40000", "")
     call <SID>X("Identifier", "ff0086", "", "")
     call <SID>X("Label", "ff0086", "", "")
@@ -312,19 +304,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("jinjaVariable", "92cd35", "fbf4c7", "")
     call <SID>X("jinjaAttribute", "dd7700", "fbf4c7", "")
     call <SID>X("jinjaSpecial", "008ffd", "fbf4c7", "")
-
-    " Originally missing
-    call <SID>X("MoreMsg", "2e8b57", "", "bold")
-    call <SID>X("Question", "2e8b57", "", "bold")
-    call <SID>X("Visual", "", "d3d3d3", "")
-    call <SID>X("FoldColumn", "00008b", "bebebe", "")
-    call <SID>X("DiffChange", "", "ffbbff", "")
-    call <SID>X("DiffDelete", "0000ff", "e0ffff", "bold")
-    call <SID>X("PmenuSel", "", "bebebe", "")
-    call <SID>X("TabLine", "000000", "d3d3d3", "")
-    call <SID>X("Underlined", "6a5acd", "", "")
-    call <SID>X("SpecialKey", "0000ff", "", "")
-    call <SID>X("Directory", "0000ff", "", "")
 
     " delete functions {{{
     delf <SID>X
