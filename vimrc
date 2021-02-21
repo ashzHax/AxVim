@@ -42,13 +42,25 @@ set numberwidth?
 set numberwidth=4
 set numberwidth?
 
-" Other Options
-set wrap?
-set shiftround?
-set matchtime?
-
 " Set many at once
 set numberwidth=2 number
 
+" Other Options
+" Wrap line below if the line is longer than the window
+set wrap
+" Tab rounding. (for > and < command)
+set shiftround
+" Time to match searh param 
+set matchtime=5
 
+" Show number \"relative\" to the cursor. (How far away the line is from the cursor)
+set norelativenumber
+" Width of number of lines
+set numberwidth=1
+" Number of spaces of each indent
+set shiftwidth=4
+
+" ========================================================
+" Chapter 3.
+" ========================================================
 
