@@ -63,4 +63,87 @@ set shiftwidth=4
 " ========================================================
 " Chapter 3.
 " ========================================================
+" Set key - to do x(delete 1 character)
+map - x
+" Set key - to do dd(delete line)
+map - dd
+
+" Set SPACE key (Visually select word)
+map <space> viw
+" Set combination key (Control+d) (Delete line)
+map <c-d> dd
+
+map - ddp
+map _ ddkkp
+
+" ========================================================
+" Chapter 4.
+" ========================================================
+" Normal Mode Mapping
+nmap \ dd
+" Visual Mode Mapping (Uppercase selected words)
+vmap \ U
+
+" Insert Mode Mapping (ESC insert, do commands, then back to insert)
+imap <c-k> <esc>ddo<esc>ki
+
+imap <c-u> <esc>viwU<esc>i
+"nmap <c-u> viwU<esc> 
+
+" ========================================================
+" Chapter 5.
+" ========================================================
+" Unmapping
+nunmap -
+nunmap \
+nunmap _
+nunmap <c-u>
+
+" Recursion of mapped keys
+nmap dd 0<esc>jddk
+nunmap dd
+
+" Always use the non-recursive command. A.L.W.A.Y.S
+" x deletes the line
+nmap x dd
+" \ does what x usually do, which is just delete the character
+nnoremap \ x
+"vnoremap \ x
+"inoremap \ x
+
+inoremap <c-k> <esc>ddo<esc>ki
+inoremap <c-u> <esc>viwU<esc>i
+
+" ========================================================
+" Chapter 6.
+" ========================================================
+" Mapping key sequences
+noremap -d dd
+noremap -c ddO
+
+" Leader is the main prefix of mapped keys. Must be defined before mapping keys.
+let mapleader = "-"
+nnoremap <leader>d dd
+
+" Local leader, for certain file types. (Later in tutorial)
+" \ is a string exiting character, need to use \\ for the actual single character
+let maplocalleader = "\\"
+nnoremap <localleader>d dd
+
+" ========================================================
+" Chapter 7.
+" ========================================================
+" Open a virtical split that opens the .vimrc file
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" $MYVIMRC points to the .vimrc
+" :vsplit opens a new virtical split
+" :split opens a horizontal split
+
+
+
+
+
+
+
+
 
