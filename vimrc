@@ -122,7 +122,7 @@ noremap -d dd
 noremap -c ddO
 
 " Leader is the main prefix of mapped keys. Must be defined before mapping keys.
-let mapleader = "-"
+let mapleader = "\""
 nnoremap <leader>d dd
 
 " Local leader, for certain file types. (Later in tutorial)
@@ -138,12 +138,42 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " $MYVIMRC points to the .vimrc
 " :vsplit opens a new virtical split
 " :split opens a horizontal split
+" <cr> = Cariage Return (Enter)
 
+" Sourcing means the run the file indicated as a VimScript script file.
+" Source the edited VIMRC file
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" ========================================================
+" Chapter 8.
+" ========================================================
+" Abbriviation. Shorten word for a word or phrase. Used mostly when you mess up spelling stuff
+" Used in INSERT, REPLACE, and COMMAND modes
+iabbrev waht what 
+iabbrev adn and
+iabbrev then then
 
+" Abbriviation will be applied when a non-keyword character is pressed.
+" Non key words are words not inside iskeyword Options
+set iskeyword?
+" print iskeyword=@,48-57,_,192-255
 
+" Why not use Mappings?
+" Because mappings occur for every instance of designated keywords, not checking for the front and the back of the keyword instance
+inoremap ssig -- <cr>Steve Losh<cr>steve@stevelog.com
+" When typing "Lary Lessig", the "ssig" instance is replaced with the mapped output 
 
+" ========================================================
+" Chapter 9.
+" ========================================================
+" Makes moving around hard, and annoying
+nnoremap jk dd
+nunmap jk
 
-
+" Complicated Mappings 
+" Select word and wrap it with the " character
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+" Select word and wrap it with the ' character
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 
 
