@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://learnvimscriptthehardway.stevelosh.com/preface.html -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Preface / Learn Vimscript the Hard Way</title>
+        <meta name="description" content="">
+        <meta name="author" content="Steve Losh">
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="./Preface _ Learn Vimscript the Hard Way_files/base.css" rel="stylesheet" type="text/css">
+        <link href="./Preface _ Learn Vimscript the Hard Way_files/skeleton.css" rel="stylesheet" type="text/css">
+        <link href="./Preface _ Learn Vimscript the Hard Way_files/layout.css" rel="stylesheet" type="text/css">
+
+        <link href="./Preface _ Learn Vimscript the Hard Way_files/tango.css" rel="stylesheet" type="text/css">
+        <link href="./Preface _ Learn Vimscript the Hard Way_files/style.less" rel="stylesheet/less" type="text/css">
+
+        <script type="text/javascript" async="" id="gauges-tracker" data-site-id="4e8f83b7f5a1f546e200000d" src="./Preface _ Learn Vimscript the Hard Way_files/track.js"></script><script type="text/javascript" async="" src="./Preface _ Learn Vimscript the Hard Way_files/ga.js"></script><script type="text/javascript" src="./Preface _ Learn Vimscript the Hard Way_files/less.js"></script><style type="text/css" media="screen" id="less:static-styles-style">html {
+  overflow-y: scroll;
+}
+html, body {
+  font: normal 16px/22px 'Palatino', 'Georgia', sans-serif;
+  color: #333;
+}
+html h1, body h1 {
+  font-size: 28px;
+}
+html h2, body h2 {
+  font-size: 22px;
+}
+html h3, body h3 {
+  font-size: 20px;
+}
+html h4, body h4 {
+  font-size: 18px;
+}
+html h5, body h5 {
+  font-size: 16px;
+}
+html header, body header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+html header h1, body header h1 {
+  font-size: 42px;
+}
+html header h1 a, body header h1 a {
+  text-decoration: none;
+}
+html header h1 a:hover, body header h1 a:hover {
+  text-decoration: underline;
+}
+html footer, body footer {
+  margin-top: 30px;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 100px;
+}
+html .toc ol, body .toc ol {
+  margin-left: 0;
+}
+html .toc ol li, body .toc ol li {
+  list-style: none;
+}
+html .nav, body .nav {
+  margin-top: 18px;
+}
+html .nav ul, body .nav ul {
+  list-style-type: none;
+  font: inherit;
+}
+html .nav li, body .nav li {
+  margin-left: 0px;
+}
+html .nav > ul > li > a, body .nav > ul > li > a {
+  text-decoration: none;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+}
+html .nav > ul > li > a:hover, body .nav > ul > li > a:hover {
+  text-decoration: underline;
+}
+html .nav > ul > li > ul ul, body .nav > ul > li > ul ul {
+  margin-left: 16px;
+}
+html .nav > ul > li > ul, body .nav > ul > li > ul {
+  margin-left: 0px;
+}
+html .prevnext .next, body .prevnext .next {
+  display: block;
+  float: right;
+}
+html pre,
+body pre,
+html code,
+body code {
+  font: normal 14px Menlo, Monaco, Consolas, monospace;
+  background-color: #fafafa;
+  border: 1px solid #aaa;
+}
+html code, body code {
+  padding: 0px 4px;
+}
+html pre, body pre {
+  margin-bottom: 22px;
+  padding: 6px 4px;
+}
+html pre code, body pre code {
+  border: none;
+  padding: 0;
+}
+html ul, body ul {
+  list-style-type: circle;
+}
+html ul li, body ul li {
+  margin-left: 36px;
+  line-height: 22px;
+}
+body.splash section.toc {
+  margin-top: 30px;
+}
+body.splash section.toc ol {
+  margin-left: 26px;
+}
+body.splash section.toc ol.pre-toc {
+  margin-bottom: 0px;
+}
+body.splash section.toc ol.pre-toc li {
+  list-style-type: lower-roman;
+}
+body.splash section.toc ol.toc li {
+  list-style-type: decimal;
+}
+</style>
+    </head>
+
+    <body class="" data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
+        <div class="container">
+            <header class="sixteen columns">
+                <h1><a href="https://learnvimscriptthehardway.stevelosh.com/">Learn Vimscript the Hard Way</a></h1>
+            </header>
+
+            
+                <section class="content">
+                    
+    <div class="fourteen columns offset-by-one">
+        <div><h1 id="preface">Preface</h1>
+<p>Programmers shape ideas into text.</p>
+<p>That text gets turned into numbers and those numbers bump into other numbers
+and <em>make things happen</em>.</p>
+<p>As programmers, we use text editors to get our ideas out of our heads and create
+the chunks of text we call "programs".  Full-time programmers will spend tens of
+thousands of hours of their lives interacting with their text editor, during
+which they'll be doing many things:</p>
+<ul>
+<li>Getting raw text from their brains into their computers.</li>
+<li>Correcting mistakes in that text.</li>
+<li>Restructuring the text to formulate a problem in a different way.</li>
+<li>Documenting how and why something was done a particular way.</li>
+<li>Communicating with other programmers about all of these things.</li>
+</ul>
+<p>Vim is incredibly powerful out of the box, but it doesn't truly shine until you
+take some time to customize it for your particular work, habits, and fingers.
+This book will introduce you to Vimscript, the main programming language used to
+customize Vim.  You'll be able to mold Vim into an editor suited to your own
+personal text editing needs and make the rest of your time in Vim more
+efficient.</p>
+<p>Along the way I'll also mention things that aren't strictly about Vimscript, but
+are more about learning and being more efficient in general.  Vimscript isn't
+going to help you much if you wind up fiddling with your editor all day instead
+of working, so it's important to strike a balance.</p>
+<p>The style of this book is a bit different from most other books about
+programming languages.  Instead of simply presenting you with facts about how
+Vimscript works, it guides you through typing in commands to see what they do.</p>
+<p>Sometimes the book will lead you into dead ends before explaining the "right
+way" to solve a problem.  Most other books don't do this, or only mention the
+sticky issues <em>after</em> showing you the solution.  This isn't how things typically
+happen in the real world, though.  Often you'll be writing a quick piece of
+Vimscript and run into a quirk of the language that you'll need to figure out.
+By stepping through this process in the book instead of glossing over it I hope
+to get you used to dealing with Vimscript's peculiarities so you're ready when
+you find edge cases of your own.  Practice makes perfect.</p>
+<p>Each chapter of the book focuses on a single topic.  They're short but packed
+with information, so don't just skim them.  If you really want to get the most
+out of this book you need to actually type in all of the commands.  You may
+already be an experienced programmer who's used to reading code and
+understanding it straight away.  If so: it doesn't matter.  Learning Vim and
+Vimscript is a different experience from learning a normal programming language.</p>
+<p>You need to <strong>type in <em>all</em> the commands.</strong></p>
+<p>You need to <strong>do <em>all</em> the exercises.</strong></p>
+<p>There are two reasons this is so important.  First, Vimscript is old and has
+a lot of dusty corners and twisty hallways.  One configuration option can change
+how the entire language works.  By typing <em>every</em> command in <em>every</em> lesson and
+doing <em>every</em> exercise you'll discover problems with your Vim build or
+configuration on the simpler commands, where they'll be easier to diagnose and
+fix.</p>
+<p>Second, Vimscript <em>is</em> Vim.  To save a file in Vim, you type <code>:write</code> (or <code>:w</code>
+for short) and press return.  To save a file in a Vimscript, you use <code>write</code>.
+Many of the Vimscript commands you'll learn can be used in your day-to-day
+editing as well, but they're only helpful if they're in your muscle memory,
+which simply doesn't happen from just reading.</p>
+<p>I hope you'll find this book useful.  It's <em>not</em> meant to be a comprehensive
+guide to Vimscript.  It's meant to get you comfortable enough with the language
+to mold Vim to your taste, write some simple plugins for other users, read other
+people's code (with regular side-trips to <code>:help</code>), and recognize some of the
+common pitfalls.</p>
+<p>Good luck!</p></div>
+
+        <div class="prevnext">
+            
+            
+                <a class="next" href="https://learnvimscriptthehardway.stevelosh.com/acknowledgements.html">Next »</a>
+            
+        </div>
+    </div>
+
+                </section>
+            
+
+            <footer class="sixteen columns">
+                Made by <a href="http://stevelosh.com/">Steve Losh</a>.
+
+                <a href="https://learnvimscriptthehardway.stevelosh.com/license.html">License</a>.
+
+                Built with
+                <a href="http://bitbucket.org/sjl/bookmarkdown/">Bookmarkdown</a>.
+            </footer>
+        </div>
+
+        
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-15328874-8']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                 })();
+            </script>
+        
+
+        
+            <script type="text/javascript">
+                var _gauges = _gauges || [];
+                (function() {
+                 var t   = document.createElement('script');
+                 t.type  = 'text/javascript';
+                 t.async = true;
+                 t.id    = 'gauges-tracker';
+                 t.setAttribute('data-site-id', '4e8f83b7f5a1f546e200000d');
+                 t.src = '//secure.gaug.es/track.js';
+                 var s = document.getElementsByTagName('script')[0];
+                 s.parentNode.insertBefore(t, s);
+                 })();
+             </script>
+        
+    
+</body></html>

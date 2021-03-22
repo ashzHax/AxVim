@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://learnvimscriptthehardway.stevelosh.com/chapters/34.html -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Case Study: Grep Operator, Part Three / Learn Vimscript the Hard Way</title>
+        <meta name="description" content="">
+        <meta name="author" content="Steve Losh">
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="./34_files/base.css" rel="stylesheet" type="text/css">
+        <link href="./34_files/skeleton.css" rel="stylesheet" type="text/css">
+        <link href="./34_files/layout.css" rel="stylesheet" type="text/css">
+
+        <link href="./34_files/tango.css" rel="stylesheet" type="text/css">
+        <link href="./34_files/style.less" rel="stylesheet/less" type="text/css">
+
+        <script type="text/javascript" async="" id="gauges-tracker" data-site-id="4e8f83b7f5a1f546e200000d" src="./34_files/track.js"></script><script type="text/javascript" async="" src="./34_files/ga.js"></script><script type="text/javascript" src="./34_files/less.js"></script><style type="text/css" media="screen" id="less:static-styles-style">html {
+  overflow-y: scroll;
+}
+html, body {
+  font: normal 16px/22px 'Palatino', 'Georgia', sans-serif;
+  color: #333;
+}
+html h1, body h1 {
+  font-size: 28px;
+}
+html h2, body h2 {
+  font-size: 22px;
+}
+html h3, body h3 {
+  font-size: 20px;
+}
+html h4, body h4 {
+  font-size: 18px;
+}
+html h5, body h5 {
+  font-size: 16px;
+}
+html header, body header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+html header h1, body header h1 {
+  font-size: 42px;
+}
+html header h1 a, body header h1 a {
+  text-decoration: none;
+}
+html header h1 a:hover, body header h1 a:hover {
+  text-decoration: underline;
+}
+html footer, body footer {
+  margin-top: 30px;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 100px;
+}
+html .toc ol, body .toc ol {
+  margin-left: 0;
+}
+html .toc ol li, body .toc ol li {
+  list-style: none;
+}
+html .nav, body .nav {
+  margin-top: 18px;
+}
+html .nav ul, body .nav ul {
+  list-style-type: none;
+  font: inherit;
+}
+html .nav li, body .nav li {
+  margin-left: 0px;
+}
+html .nav > ul > li > a, body .nav > ul > li > a {
+  text-decoration: none;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+}
+html .nav > ul > li > a:hover, body .nav > ul > li > a:hover {
+  text-decoration: underline;
+}
+html .nav > ul > li > ul ul, body .nav > ul > li > ul ul {
+  margin-left: 16px;
+}
+html .nav > ul > li > ul, body .nav > ul > li > ul {
+  margin-left: 0px;
+}
+html .prevnext .next, body .prevnext .next {
+  display: block;
+  float: right;
+}
+html pre,
+body pre,
+html code,
+body code {
+  font: normal 14px Menlo, Monaco, Consolas, monospace;
+  background-color: #fafafa;
+  border: 1px solid #aaa;
+}
+html code, body code {
+  padding: 0px 4px;
+}
+html pre, body pre {
+  margin-bottom: 22px;
+  padding: 6px 4px;
+}
+html pre code, body pre code {
+  border: none;
+  padding: 0;
+}
+html ul, body ul {
+  list-style-type: circle;
+}
+html ul li, body ul li {
+  margin-left: 36px;
+  line-height: 22px;
+}
+body.splash section.toc {
+  margin-top: 30px;
+}
+body.splash section.toc ol {
+  margin-left: 26px;
+}
+body.splash section.toc ol.pre-toc {
+  margin-bottom: 0px;
+}
+body.splash section.toc ol.pre-toc li {
+  list-style-type: lower-roman;
+}
+body.splash section.toc ol.toc li {
+  list-style-type: decimal;
+}
+</style>
+    </head>
+
+    <body class="" data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
+        <div class="container">
+            <header class="sixteen columns">
+                <h1><a href="https://learnvimscriptthehardway.stevelosh.com/">Learn Vimscript the Hard Way</a></h1>
+            </header>
+
+            
+    <section class="nav three columns">
+        
+<ul>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/34.html#case-study-grep-operator-part-three">Case Study: Grep Operator, Part Three</a><ul>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/34.html#saving-registers">Saving Registers</a></li>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/34.html#namespacing">Namespacing</a></li>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/34.html#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+
+        <div class="prevnext">
+            
+                <a class="prev" href="https://learnvimscriptthehardway.stevelosh.com/chapters/33.html">« Prev</a>
+            
+            
+                <a class="next" href="https://learnvimscriptthehardway.stevelosh.com/chapters/35.html">Next »</a>
+            
+        </div>
+    </section>
+
+    <section class="content twelve columns offset-by-one">
+        <div> 
+<h1 id="case-study-grep-operator-part-three">Case Study: Grep Operator, Part Three</h1>
+<p>Our shiny new "grep operator" is working great, but part of writing Vimscript is
+being considerate and making your users' lives easier.  We can do two more
+things to make our operator play nicely in the Vim ecosystem.</p>
+<h2 id="saving-registers">Saving Registers</h2>
+<p>By yanking the text into the unnamed register we destroy anything that was
+previously in there.  Further, by using a visual selection to yank the text in
+the case that our operator is applied with a motion, we also destroy any record
+of the most recent visual selection.</p>
+<p>This isn't very nice to our users, so let's avoid using a visual selection in
+that case and also save the contents of the unnamed register before we yank in
+all cases so that we can restore it after we're done.  Change the code to look
+like this:</p>
+<pre class="codehilite"><code class="language-vim">nnoremap &lt;leader&gt;g :set operatorfunc=GrepOperator&lt;cr&gt;g@
+vnoremap &lt;leader&gt;g :&lt;c-u&gt;call GrepOperator(visualmode())&lt;cr&gt;
+
+function! GrepOperator(type)
+    let saved_unnamed_register = @@
+
+    if a:type ==# 'v'
+        normal! `&lt;v`&gt;y
+    elseif a:type ==# 'char'
+        normal! `[y`]
+    else
+        return
+    endif
+
+    silent execute "grep! -R " . shellescape(@@) . " ."
+    copen
+
+    let @@ = saved_unnamed_register
+endfunction</code></pre>
+
+
+<p>We've added two <code>let</code> statements at the top and bottom of the function.  The
+first saves the contents of <code>@@</code> into a variable and the second restores it.
+Additionally, we've applied yank with a motion rather than a visual selection in
+the case that our operator is applied with a motion.</p>
+<p>Write and source the file.  Make sure it works by yanking some text, then
+pressing <code>&lt;leader&gt;giw</code> to run our operator, then pressing <code>p</code> to paste the text
+you yanked before.</p>
+<p>When writing Vim plugins you should <em>always</em> strive to save and restore any
+settings or registers your code modifies so you don't surprise and confuse your
+users.</p>
+<h2 id="namespacing">Namespacing</h2>
+<p>Our script created a function named <code>GrepOperator</code> in the global namespace.
+This probably isn't a big deal, but when you're writing Vimscript it's far
+better to be safe than sorry.</p>
+<p>We can avoid polluting the global namespace by tweaking a couple of lines in our
+code.  Edit the file to look like this:</p>
+<pre class="codehilite"><code class="language-vim">nnoremap &lt;leader&gt;g :set operatorfunc=&lt;SID&gt;GrepOperator&lt;cr&gt;g@
+vnoremap &lt;leader&gt;g :&lt;c-u&gt;call &lt;SID&gt;GrepOperator(visualmode())&lt;cr&gt;
+
+function! s:GrepOperator(type)
+    let saved_unnamed_register = @@
+
+    if a:type ==# 'v'
+        normal! `&lt;v`&gt;y
+    elseif a:type ==# 'char'
+        normal! `[v`]y
+    else
+        return
+    endif
+
+    silent execute "grep! -R " . shellescape(@@) . " ."
+    copen
+
+    let @@ = saved_unnamed_register
+endfunction</code></pre>
+
+
+<p>The first three lines of the script have changed.  First, we modified the
+function name to start with <code>s:</code> which places it in the current script's
+namespace.</p>
+<p>We also modified the mappings and prepended the <code>GrepOperator</code> function name
+with <code>&lt;SID&gt;</code> so they could find the function.  If we hadn't done this they would
+have tried to find the function in the global namespace, which wouldn't have
+worked.</p>
+<p>Congratulations, our <code>grep-operator.vim</code> script is not only extremely useful,
+but it's also a considerate Vimscript citizen!</p>
+<h2 id="exercises">Exercises</h2>
+<p>Read <code>:help &lt;SID&gt;</code>.</p>
+<p>Treat yourself to a snack.  You deserve it!</p></div>
+
+        <div class="prevnext">
+            
+                <a class="prev" href="https://learnvimscriptthehardway.stevelosh.com/chapters/33.html">« Previous</a>
+            
+            
+                <a class="next" href="https://learnvimscriptthehardway.stevelosh.com/chapters/35.html">Next »</a>
+            
+        </div>
+    </section>
+
+
+            <footer class="sixteen columns">
+                Made by <a href="http://stevelosh.com/">Steve Losh</a>.
+
+                <a href="https://learnvimscriptthehardway.stevelosh.com/license.html">License</a>.
+
+                Built with
+                <a href="http://bitbucket.org/sjl/bookmarkdown/">Bookmarkdown</a>.
+            </footer>
+        </div>
+
+        
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-15328874-8']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                 })();
+            </script>
+        
+
+        
+            <script type="text/javascript">
+                var _gauges = _gauges || [];
+                (function() {
+                 var t   = document.createElement('script');
+                 t.type  = 'text/javascript';
+                 t.async = true;
+                 t.id    = 'gauges-tracker';
+                 t.setAttribute('data-site-id', '4e8f83b7f5a1f546e200000d');
+                 t.src = '//secure.gaug.es/track.js';
+                 var s = document.getElementsByTagName('script')[0];
+                 s.parentNode.insertBefore(t, s);
+                 })();
+             </script>
+        
+    
+</body></html>

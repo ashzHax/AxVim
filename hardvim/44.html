@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://learnvimscriptthehardway.stevelosh.com/chapters/44.html -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Detecting Filetypes / Learn Vimscript the Hard Way</title>
+        <meta name="description" content="">
+        <meta name="author" content="Steve Losh">
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="./44_files/base.css" rel="stylesheet" type="text/css">
+        <link href="./44_files/skeleton.css" rel="stylesheet" type="text/css">
+        <link href="./44_files/layout.css" rel="stylesheet" type="text/css">
+
+        <link href="./44_files/tango.css" rel="stylesheet" type="text/css">
+        <link href="./44_files/style.less" rel="stylesheet/less" type="text/css">
+
+        <script type="text/javascript" async="" id="gauges-tracker" data-site-id="4e8f83b7f5a1f546e200000d" src="./44_files/track.js"></script><script type="text/javascript" async="" src="./44_files/ga.js"></script><script type="text/javascript" src="./44_files/less.js"></script><style type="text/css" media="screen" id="less:static-styles-style">html {
+  overflow-y: scroll;
+}
+html, body {
+  font: normal 16px/22px 'Palatino', 'Georgia', sans-serif;
+  color: #333;
+}
+html h1, body h1 {
+  font-size: 28px;
+}
+html h2, body h2 {
+  font-size: 22px;
+}
+html h3, body h3 {
+  font-size: 20px;
+}
+html h4, body h4 {
+  font-size: 18px;
+}
+html h5, body h5 {
+  font-size: 16px;
+}
+html header, body header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+html header h1, body header h1 {
+  font-size: 42px;
+}
+html header h1 a, body header h1 a {
+  text-decoration: none;
+}
+html header h1 a:hover, body header h1 a:hover {
+  text-decoration: underline;
+}
+html footer, body footer {
+  margin-top: 30px;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 100px;
+}
+html .toc ol, body .toc ol {
+  margin-left: 0;
+}
+html .toc ol li, body .toc ol li {
+  list-style: none;
+}
+html .nav, body .nav {
+  margin-top: 18px;
+}
+html .nav ul, body .nav ul {
+  list-style-type: none;
+  font: inherit;
+}
+html .nav li, body .nav li {
+  margin-left: 0px;
+}
+html .nav > ul > li > a, body .nav > ul > li > a {
+  text-decoration: none;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+}
+html .nav > ul > li > a:hover, body .nav > ul > li > a:hover {
+  text-decoration: underline;
+}
+html .nav > ul > li > ul ul, body .nav > ul > li > ul ul {
+  margin-left: 16px;
+}
+html .nav > ul > li > ul, body .nav > ul > li > ul {
+  margin-left: 0px;
+}
+html .prevnext .next, body .prevnext .next {
+  display: block;
+  float: right;
+}
+html pre,
+body pre,
+html code,
+body code {
+  font: normal 14px Menlo, Monaco, Consolas, monospace;
+  background-color: #fafafa;
+  border: 1px solid #aaa;
+}
+html code, body code {
+  padding: 0px 4px;
+}
+html pre, body pre {
+  margin-bottom: 22px;
+  padding: 6px 4px;
+}
+html pre code, body pre code {
+  border: none;
+  padding: 0;
+}
+html ul, body ul {
+  list-style-type: circle;
+}
+html ul li, body ul li {
+  margin-left: 36px;
+  line-height: 22px;
+}
+body.splash section.toc {
+  margin-top: 30px;
+}
+body.splash section.toc ol {
+  margin-left: 26px;
+}
+body.splash section.toc ol.pre-toc {
+  margin-bottom: 0px;
+}
+body.splash section.toc ol.pre-toc li {
+  list-style-type: lower-roman;
+}
+body.splash section.toc ol.toc li {
+  list-style-type: decimal;
+}
+</style>
+    </head>
+
+    <body class="" data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
+        <div class="container">
+            <header class="sixteen columns">
+                <h1><a href="https://learnvimscriptthehardway.stevelosh.com/">Learn Vimscript the Hard Way</a></h1>
+            </header>
+
+            
+    <section class="nav three columns">
+        
+<ul>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/44.html#detecting-filetypes">Detecting Filetypes</a><ul>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/44.html#detecting-potion-files">Detecting Potion Files</a></li>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/44.html#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+
+        <div class="prevnext">
+            
+                <a class="prev" href="https://learnvimscriptthehardway.stevelosh.com/chapters/43.html">« Prev</a>
+            
+            
+                <a class="next" href="https://learnvimscriptthehardway.stevelosh.com/chapters/45.html">Next »</a>
+            
+        </div>
+    </section>
+
+    <section class="content twelve columns offset-by-one">
+        <div> 
+<h1 id="detecting-filetypes">Detecting Filetypes</h1>
+<p>Let's create a Potion file we can use as a sample as we're working on our
+plugin.  Create a <code>factorial.pn</code> file somewhere and put the following Potion
+code inside it:</p>
+<pre class="codehilite"><code class="language-text">factorial = (n):
+    total = 1
+    n to 1 (i):
+        total *= i.
+    total.
+
+10 times (i):
+    i string print
+    '! is: ' print
+    factorial (i) string print
+    "\n" print.</code></pre>
+
+
+<p>This code creates a simple factorial function and calls it ten times, printing
+the results each time.  Go ahead and run it with <code>potion factorial.pn</code>.  The
+output should look like this:</p>
+<pre class="codehilite"><code class="language-text">0! is: 0
+1! is: 1
+2! is: 2
+3! is: 6
+4! is: 24
+5! is: 120
+6! is: 720
+7! is: 5040
+8! is: 40320
+9! is: 362880</code></pre>
+
+
+<p>If you don't get this output, or you get an error, stop and figure out what's
+gone wrong.  The code should work exactly as-is.</p>
+<p>Take some time to understand how the code works.  Refer to the Potion docs
+liberally.  It's not critical to understanding Vimscript but it will make you
+a better programmer.</p>
+<h2 id="detecting-potion-files">Detecting Potion Files</h2>
+<p>Open <code>factorial.pn</code> in Vim and run the following command:</p>
+<pre class="codehilite"><code class="language-vim">:set filetype?</code></pre>
+
+
+<p>Vim will display <code>filetype=</code> because it doesn't know what a <code>.pn</code> file is yet.
+Let's fix that.</p>
+<p>Create <code>ftdetect/potion.vim</code> in your plugin's repo.  Put the following lines
+into it:</p>
+<pre class="codehilite"><code class="language-vim">au BufNewFile,BufRead *.pn set filetype=potion</code></pre>
+
+
+<p>This creates a single autocommand: a command to set the filetype of <code>.pn</code> files
+to <code>potion</code>.  Pretty straightforward.</p>
+<p>Notice that we <em>didn't</em> use an autocommand group like we usually would.  Vim
+automatically wraps the contents of <code>ftdetect/*.vim</code> files in autocommand groups
+for you, so you don't need to worry about it.</p>
+<p>Close the <code>factorial.pn</code> file and reopen it.  Now run the previous command
+again:</p>
+<pre class="codehilite"><code class="language-vim">:set filetype?</code></pre>
+
+
+<p>This time Vim displays <code>filetype=potion</code>.  When Vim started up it loaded the
+autocommand group inside <code>~/.vim/bundle/potion/ftdetect/potion.vim</code>, and when it
+opened <code>factorial.pn</code> the autocommand fired, setting the <code>filetype</code> to <code>potion</code>.</p>
+<p>Now that we've taught Vim to recognize Potion files we can move on to actually
+creating some useful behavior in our plugin.</p>
+<h2 id="exercises">Exercises</h2>
+<p>Read <code>:help ft</code>.  Don't worry if you don't understand everything there.</p>
+<p>Read <code>:help setfiletype</code>.</p>
+<p>Modify the Potion plugin's <code>ftdetect/potion.vim</code> script to use <code>setfiletype</code>
+instead of <code>set filetype</code>.</p></div>
+
+        <div class="prevnext">
+            
+                <a class="prev" href="https://learnvimscriptthehardway.stevelosh.com/chapters/43.html">« Previous</a>
+            
+            
+                <a class="next" href="https://learnvimscriptthehardway.stevelosh.com/chapters/45.html">Next »</a>
+            
+        </div>
+    </section>
+
+
+            <footer class="sixteen columns">
+                Made by <a href="http://stevelosh.com/">Steve Losh</a>.
+
+                <a href="https://learnvimscriptthehardway.stevelosh.com/license.html">License</a>.
+
+                Built with
+                <a href="http://bitbucket.org/sjl/bookmarkdown/">Bookmarkdown</a>.
+            </footer>
+        </div>
+
+        
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-15328874-8']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                 })();
+            </script>
+        
+
+        
+            <script type="text/javascript">
+                var _gauges = _gauges || [];
+                (function() {
+                 var t   = document.createElement('script');
+                 t.type  = 'text/javascript';
+                 t.async = true;
+                 t.id    = 'gauges-tracker';
+                 t.setAttribute('data-site-id', '4e8f83b7f5a1f546e200000d');
+                 t.src = '//secure.gaug.es/track.js';
+                 var s = document.getElementsByTagName('script')[0];
+                 s.parentNode.insertBefore(t, s);
+                 })();
+             </script>
+        
+    
+</body></html>
