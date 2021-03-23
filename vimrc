@@ -1,10 +1,25 @@
-" AXC development setup for Vim
+" By:     ashz
+" Reason: study purpose VIMRC, not for general use
 
 let TYPE='casual'
 
 " default settings
 set nu
 set autoindent noexpandtab tabstop=4 shiftwidth=4
+
+" personal settings
+inoremap <esc> <nop>
+inoremap jk <esc>
+
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <right> <nop>
+inoremap <left> <nop>
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <right> <nop>
+nnoremap <left> <nop>
 
 " need to be high color, else run default color scheme
 if &t_Co == 256 || has('gui_running')
