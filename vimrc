@@ -7,20 +7,6 @@ let TYPE='casual'
 set nu
 set autoindent noexpandtab tabstop=4 shiftwidth=4
 
-" personal settings
-inoremap <esc> <nop>
-inoremap jk <esc>
-
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <right> <nop>
-inoremap <left> <nop>
-
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <right> <nop>
-nnoremap <left> <nop>
-
 " need to be high color, else run default color scheme
 if &t_Co == 256 || has('gui_running')
     if TYPE == 'work'
@@ -190,5 +176,111 @@ nunmap jk
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 " Select word and wrap it with the ' character
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+
+" Wrap last visually selected word in quotes(")
+vnoremap <leader>" <esc>`<i"<esc>`>la"<esc>
+
+" Go to the first character in line
+nnoremap H 0
+" Go to the end of the line
+nnoremap L $
+
+" ========================================================
+" Chapter 10.
+" ========================================================
+" FIX YOUR BAD HABITS
+inoremap <esc> <nop>
+inoremap jk <esc>
+
+" SERIOUSLY FIX IT
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <right> <nop>
+inoremap <left> <nop>
+
+" MORE KEYS, SURE, BUT MORE EFFICIENT
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <right> <nop>
+nnoremap <left> <nop>
+
+" ========================================================
+" Chapter 11.
+" ========================================================
+" Applied to all buffers.
+nnoremap <leader>d dd
+" Applied to only current buffer.
+nnoremap <buffer> <leader>x dd
+
+" Bad leader selecting, might overwrite someone's plugin
+let mapleader = "\""
+" When writing plugins, always use localleader
+let maplocalleader = "\\"
+
+" Localized settings
+setlocal wrap
+setlocal nowrap
+
+" Not all settings can be localized (Number can be localized though, no worries)
+setlocal number
+setlocal nonumber
+
+" Shadowed. Really, someone is reading too much dramatic stuff. More specific
+" instructions are prioritized, overshadowing later instructions.
+nnoremap <buffer> Q x
+nnoremap Q dd
+
+" ========================================================
+" Chapter 12.
+" ========================================================
+" Autocommands. Run commands on event detection.
+" Write(Save) file when initially created
+autocmd BufNewFile * :write
+" BufNewFile > Event
+" *          > Filter
+" :write     > Command
+
+" Pattern Specific filtering for autocmd
+" Every new file, save it.
+autocmd BufNewFile *txt :write
+
+" Indent entire file when writing(saving)
+autocmd BufWritePre *.html :normal gg=G
+" Indent entire HTML file when writing(saving) and reading(opening)
+autocmd BufWritePre,BufRead *.html normal gg=G
+" Set option wrap OFF when opening html files
+autocmd BufNewFile,BufRead *.html setlocal nowrap
+
+" JavaScript code Commenting
+autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+" Python code Commenting
+autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+" Bash code commenting
+autocmd FileType sh nnoremap <buffer> <localleader>c I#<esc>
+" C code Commenting
+autocmd FileType c nnoremap <buffer> <localleader>c I//<esc>
+autocmd FileType cpp nnoremap <buffer> <localleader>c I//<esc>
+autocmd FileType cs nnoremap <buffer> <localleader>c I//<esc>
+
+" ========================================================
+" Chapter 13.
+" ========================================================
+" Localized abbreviation
+abbrev <buffer> &mdash; &mdash;
+
+" Localized abbreviation for certain filetypes
+autocmd FileType python     :iabbrev <buffer> iff if:<left>
+autocmd FileType javascript :iabbrev <buffer> iff if ()<left>
+
+" ========================================================
+" Chapter 14.
+" ========================================================
+" grouping. will combine with other groups
+augroup testgroup
+	autocmd! " clearing autocmds
+	autocmd BufWrite * :echom "Foo"
+    autocmd BufWrite * :echom "Bar"
+augroup END
+
 
 
