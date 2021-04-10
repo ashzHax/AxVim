@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://learnvimscriptthehardway.stevelosh.com/chapters/28.html -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Execute / Learn Vimscript the Hard Way</title>
+        <meta name="description" content="">
+        <meta name="author" content="Steve Losh">
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="./28_files/base.css" rel="stylesheet" type="text/css">
+        <link href="./28_files/skeleton.css" rel="stylesheet" type="text/css">
+        <link href="./28_files/layout.css" rel="stylesheet" type="text/css">
+
+        <link href="./28_files/tango.css" rel="stylesheet" type="text/css">
+        <link href="./28_files/style.less" rel="stylesheet/less" type="text/css">
+
+        <script type="text/javascript" async="" id="gauges-tracker" data-site-id="4e8f83b7f5a1f546e200000d" src="./28_files/track.js"></script><script type="text/javascript" async="" src="./28_files/ga.js"></script><script type="text/javascript" src="./28_files/less.js"></script><style type="text/css" media="screen" id="less:static-styles-style">html {
+  overflow-y: scroll;
+}
+html, body {
+  font: normal 16px/22px 'Palatino', 'Georgia', sans-serif;
+  color: #333;
+}
+html h1, body h1 {
+  font-size: 28px;
+}
+html h2, body h2 {
+  font-size: 22px;
+}
+html h3, body h3 {
+  font-size: 20px;
+}
+html h4, body h4 {
+  font-size: 18px;
+}
+html h5, body h5 {
+  font-size: 16px;
+}
+html header, body header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+html header h1, body header h1 {
+  font-size: 42px;
+}
+html header h1 a, body header h1 a {
+  text-decoration: none;
+}
+html header h1 a:hover, body header h1 a:hover {
+  text-decoration: underline;
+}
+html footer, body footer {
+  margin-top: 30px;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 100px;
+}
+html .toc ol, body .toc ol {
+  margin-left: 0;
+}
+html .toc ol li, body .toc ol li {
+  list-style: none;
+}
+html .nav, body .nav {
+  margin-top: 18px;
+}
+html .nav ul, body .nav ul {
+  list-style-type: none;
+  font: inherit;
+}
+html .nav li, body .nav li {
+  margin-left: 0px;
+}
+html .nav > ul > li > a, body .nav > ul > li > a {
+  text-decoration: none;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+}
+html .nav > ul > li > a:hover, body .nav > ul > li > a:hover {
+  text-decoration: underline;
+}
+html .nav > ul > li > ul ul, body .nav > ul > li > ul ul {
+  margin-left: 16px;
+}
+html .nav > ul > li > ul, body .nav > ul > li > ul {
+  margin-left: 0px;
+}
+html .prevnext .next, body .prevnext .next {
+  display: block;
+  float: right;
+}
+html pre,
+body pre,
+html code,
+body code {
+  font: normal 14px Menlo, Monaco, Consolas, monospace;
+  background-color: #fafafa;
+  border: 1px solid #aaa;
+}
+html code, body code {
+  padding: 0px 4px;
+}
+html pre, body pre {
+  margin-bottom: 22px;
+  padding: 6px 4px;
+}
+html pre code, body pre code {
+  border: none;
+  padding: 0;
+}
+html ul, body ul {
+  list-style-type: circle;
+}
+html ul li, body ul li {
+  margin-left: 36px;
+  line-height: 22px;
+}
+body.splash section.toc {
+  margin-top: 30px;
+}
+body.splash section.toc ol {
+  margin-left: 26px;
+}
+body.splash section.toc ol.pre-toc {
+  margin-bottom: 0px;
+}
+body.splash section.toc ol.pre-toc li {
+  list-style-type: lower-roman;
+}
+body.splash section.toc ol.toc li {
+  list-style-type: decimal;
+}
+</style>
+    </head>
+
+    <body class="" data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
+        <div class="container">
+            <header class="sixteen columns">
+                <h1><a href="https://learnvimscriptthehardway.stevelosh.com/">Learn Vimscript the Hard Way</a></h1>
+            </header>
+
+            
+    <section class="nav three columns">
+        
+<ul>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/28.html#execute">Execute</a><ul>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/28.html#basic-execution">Basic Execution</a></li>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/28.html#is-execute-dangerous">Is Execute Dangerous?</a></li>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/28.html#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+
+        <div class="prevnext">
+            
+                <a class="prev" href="https://learnvimscriptthehardway.stevelosh.com/chapters/27.html">« Prev</a>
+            
+            
+                <a class="next" href="https://learnvimscriptthehardway.stevelosh.com/chapters/29.html">Next »</a>
+            
+        </div>
+    </section>
+
+    <section class="content twelve columns offset-by-one">
+        <div> 
+<h1 id="execute">Execute</h1>
+<p>The <code>execute</code> command is used to evaluate a string as if it were a Vimscript
+command.  We saw it in an earlier chapter, but now that we know a bit more about
+Vimscript Strings we're going to take another look.</p>
+<h2 id="basic-execution">Basic Execution</h2>
+<p>Run the following command:</p>
+<pre class="codehilite"><code class="language-vim">:execute "echom 'Hello, world!'"</code></pre>
+
+
+<p>Vim evaluates <code>echom 'Hello, world!'</code> as a command and dutifully echoes it to
+the screen and message log.  Execute is a very powerful tool because it lets you
+build commands out of arbitrary strings.</p>
+<p>Let's try a more useful example.  Prepare by opening a file in Vim, then using
+<code>:edit foo.txt</code> in the same window to open a new buffer.  Now run the
+following command:</p>
+<pre class="codehilite"><code class="language-vim">:execute "rightbelow vsplit " . bufname("#")</code></pre>
+
+
+<p>Vim will open the first file in a vertical split to the right of the second
+file.  What happened here?</p>
+<p>First, Vim builds the command string by concatenating <code>"rightbelow vsplit "</code>
+with the result of the <code>bufname("#")</code> call.</p>
+<p>We'll look at the function more later, but for now just trust that it returns
+the path of the previous buffer.  You can play with it using <code>echom</code> if you want
+to see for yourself.</p>
+<p>Once <code>bufname</code> is evaluated Vim builds the string <code>"rightbelow vsplit
+bar.txt"</code>.  The <code>execute</code> command evaluates this as a Vimscript command which
+opens the split with the file.</p>
+<h2 id="is-execute-dangerous">Is Execute Dangerous?</h2>
+<p>In most programming languages the use of such an "eval" construct to evaluate
+strings as program code is frowned upon (to put it lightly).  Vimscript's
+<code>execute</code> command doesn't have the same stigma for two reasons.</p>
+<p>First, most Vimscript code only ever takes input from a single person: the user.
+If the user wants to input a tricky string that will cause an <code>execute</code> command
+to do something bad, well, it's their computer!  Contrast this with other
+languages, where programs constantly take input from untrusted users.  Vim is
+a unique environment where the normal security concerns simply aren't common.</p>
+<p>The second reason is that because Vimscript has sometimes arcane and tricky
+syntax, <code>execute</code> is often the easiest, most straightforward way to get
+something done.  In most other languages using an "eval" construct won't usually
+save you much typing, but in Vimscript it can collapse many lines into a single
+one.</p>
+<h2 id="exercises">Exercises</h2>
+<p>Skim <code>:help execute</code> to get an idea of some of the things you can and can't use
+<code>execute</code> for.  Don't dive too deeply yet -- we're going to revisit it very
+soon.</p>
+<p>Read <code>:help leftabove</code>, <code>:help rightbelow</code>, <code>:help :split</code>, and <code>:help :vsplit</code>
+(notice the extra colon in the last two topics).</p>
+<p>Add a mapping to your <code>~/.vimrc</code> file that opens the previous buffer in a split
+of your choosing (vertical/horizontal, above/below/left/right).</p></div>
+
+        <div class="prevnext">
+            
+                <a class="prev" href="https://learnvimscriptthehardway.stevelosh.com/chapters/27.html">« Previous</a>
+            
+            
+                <a class="next" href="https://learnvimscriptthehardway.stevelosh.com/chapters/29.html">Next »</a>
+            
+        </div>
+    </section>
+
+
+            <footer class="sixteen columns">
+                Made by <a href="http://stevelosh.com/">Steve Losh</a>.
+
+                <a href="https://learnvimscriptthehardway.stevelosh.com/license.html">License</a>.
+
+                Built with
+                <a href="http://bitbucket.org/sjl/bookmarkdown/">Bookmarkdown</a>.
+            </footer>
+        </div>
+
+        
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-15328874-8']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                 })();
+            </script>
+        
+
+        
+            <script type="text/javascript">
+                var _gauges = _gauges || [];
+                (function() {
+                 var t   = document.createElement('script');
+                 t.type  = 'text/javascript';
+                 t.async = true;
+                 t.id    = 'gauges-tracker';
+                 t.setAttribute('data-site-id', '4e8f83b7f5a1f546e200000d');
+                 t.src = '//secure.gaug.es/track.js';
+                 var s = document.getElementsByTagName('script')[0];
+                 s.parentNode.insertBefore(t, s);
+                 })();
+             </script>
+        
+    
+</body></html>

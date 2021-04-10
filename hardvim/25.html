@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://learnvimscriptthehardway.stevelosh.com/chapters/25.html -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Numbers / Learn Vimscript the Hard Way</title>
+        <meta name="description" content="">
+        <meta name="author" content="Steve Losh">
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="./25_files/base.css" rel="stylesheet" type="text/css">
+        <link href="./25_files/skeleton.css" rel="stylesheet" type="text/css">
+        <link href="./25_files/layout.css" rel="stylesheet" type="text/css">
+
+        <link href="./25_files/tango.css" rel="stylesheet" type="text/css">
+        <link href="./25_files/style.less" rel="stylesheet/less" type="text/css">
+
+        <script type="text/javascript" async="" id="gauges-tracker" data-site-id="4e8f83b7f5a1f546e200000d" src="./25_files/track.js"></script><script type="text/javascript" async="" src="./25_files/ga.js"></script><script type="text/javascript" src="./25_files/less.js"></script><style type="text/css" media="screen" id="less:static-styles-style">html {
+  overflow-y: scroll;
+}
+html, body {
+  font: normal 16px/22px 'Palatino', 'Georgia', sans-serif;
+  color: #333;
+}
+html h1, body h1 {
+  font-size: 28px;
+}
+html h2, body h2 {
+  font-size: 22px;
+}
+html h3, body h3 {
+  font-size: 20px;
+}
+html h4, body h4 {
+  font-size: 18px;
+}
+html h5, body h5 {
+  font-size: 16px;
+}
+html header, body header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+html header h1, body header h1 {
+  font-size: 42px;
+}
+html header h1 a, body header h1 a {
+  text-decoration: none;
+}
+html header h1 a:hover, body header h1 a:hover {
+  text-decoration: underline;
+}
+html footer, body footer {
+  margin-top: 30px;
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 100px;
+}
+html .toc ol, body .toc ol {
+  margin-left: 0;
+}
+html .toc ol li, body .toc ol li {
+  list-style: none;
+}
+html .nav, body .nav {
+  margin-top: 18px;
+}
+html .nav ul, body .nav ul {
+  list-style-type: none;
+  font: inherit;
+}
+html .nav li, body .nav li {
+  margin-left: 0px;
+}
+html .nav > ul > li > a, body .nav > ul > li > a {
+  text-decoration: none;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+}
+html .nav > ul > li > a:hover, body .nav > ul > li > a:hover {
+  text-decoration: underline;
+}
+html .nav > ul > li > ul ul, body .nav > ul > li > ul ul {
+  margin-left: 16px;
+}
+html .nav > ul > li > ul, body .nav > ul > li > ul {
+  margin-left: 0px;
+}
+html .prevnext .next, body .prevnext .next {
+  display: block;
+  float: right;
+}
+html pre,
+body pre,
+html code,
+body code {
+  font: normal 14px Menlo, Monaco, Consolas, monospace;
+  background-color: #fafafa;
+  border: 1px solid #aaa;
+}
+html code, body code {
+  padding: 0px 4px;
+}
+html pre, body pre {
+  margin-bottom: 22px;
+  padding: 6px 4px;
+}
+html pre code, body pre code {
+  border: none;
+  padding: 0;
+}
+html ul, body ul {
+  list-style-type: circle;
+}
+html ul li, body ul li {
+  margin-left: 36px;
+  line-height: 22px;
+}
+body.splash section.toc {
+  margin-top: 30px;
+}
+body.splash section.toc ol {
+  margin-left: 26px;
+}
+body.splash section.toc ol.pre-toc {
+  margin-bottom: 0px;
+}
+body.splash section.toc ol.pre-toc li {
+  list-style-type: lower-roman;
+}
+body.splash section.toc ol.toc li {
+  list-style-type: decimal;
+}
+</style>
+    </head>
+
+    <body class="" data-new-gr-c-s-check-loaded="14.1000.0" data-gr-ext-installed="">
+        <div class="container">
+            <header class="sixteen columns">
+                <h1><a href="https://learnvimscriptthehardway.stevelosh.com/">Learn Vimscript the Hard Way</a></h1>
+            </header>
+
+            
+    <section class="nav three columns">
+        
+<ul>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/25.html#numbers">Numbers</a><ul>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/25.html#number-formats">Number Formats</a></li>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/25.html#float-formats">Float Formats</a></li>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/25.html#coercion">Coercion</a></li>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/25.html#division">Division</a></li>
+<li><a href="https://learnvimscriptthehardway.stevelosh.com/chapters/25.html#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+
+        <div class="prevnext">
+            
+                <a class="prev" href="https://learnvimscriptthehardway.stevelosh.com/chapters/24.html">« Prev</a>
+            
+            
+                <a class="next" href="https://learnvimscriptthehardway.stevelosh.com/chapters/26.html">Next »</a>
+            
+        </div>
+    </section>
+
+    <section class="content twelve columns offset-by-one">
+        <div> 
+<h1 id="numbers">Numbers</h1>
+<p>Now it's time to start taking a closer look at the different types of variables
+you can use.  First we'll go over Vim's numeric types.</p>
+<p>Vimscript has two types of numeric variables: Numbers and Floats.  A Number is
+a 32 bit signed integer.  A Float is a floating point number.</p>
+<h2 id="number-formats">Number Formats</h2>
+<p>You can specify Numbers in a few different ways.  Run the following command:</p>
+<pre class="codehilite"><code class="language-vim">:echom 100</code></pre>
+
+
+<p>No surprises here -- Vim displays <code>100</code>.  Now run this command:</p>
+<pre class="codehilite"><code class="language-vim">:echom 0xff</code></pre>
+
+
+<p>This time Vim displays <code>255</code>.  You can specify numbers in hex notation by
+prefixing them with <code>0x</code> or <code>0X</code>.  Now run this command:</p>
+<pre class="codehilite"><code class="language-vim">:echom 010</code></pre>
+
+
+<p>You can also use octal by starting a number with a <code>0</code>.  Be careful with this,
+because it's easy to make mistakes.  Try the following commands:</p>
+<pre class="codehilite"><code class="language-vim">:echom 017
+:echom 019</code></pre>
+
+
+<p>Vim will print <code>15</code> for the first command, because <code>17</code> in octal is equal to
+<code>15</code> in decimal.  For the second command Vim treats it as a decimal number, even
+though it starts with a <code>0</code>, because it's not a valid octal number.</p>
+<p>Because Vim silently does the wrong thing in this case, I'd recommend avoiding
+the use of octal numbers when possible.</p>
+<h2 id="float-formats">Float Formats</h2>
+<p>Floats can also be specified in multiple ways.  Run the following command:</p>
+<pre class="codehilite"><code class="language-vim">:echo 100.1</code></pre>
+
+
+<p>Notice that we're using <code>echo</code> here and not <code>echom</code> like we usually do.  We'll
+talk about why in a moment.</p>
+<p>Vim displays <code>100.1</code> as expected.  You can also use exponential notation.  Run
+this command:</p>
+<pre class="codehilite"><code class="language-vim">:echo 5.45e+3</code></pre>
+
+
+<p>Vim displays <code>5450.0</code>.  A negative exponent can also be used.  Run this command:</p>
+<pre class="codehilite"><code class="language-vim">:echo 15.45e-2</code></pre>
+
+
+<p>Vim displays <code>0.1545</code>.  The <code>+</code> or <code>-</code> before the power of ten is optional. If
+it's omitted then it's assumed to be positive.  Run the following command:</p>
+<pre class="codehilite"><code class="language-vim">:echo 15.3e9</code></pre>
+
+
+<p>Vim will display <code>1.53e10</code>, which is equivalent.  The decimal point and number
+after it are <em>not</em> optional.  Run the following command and see that it crashes:</p>
+<pre class="codehilite"><code class="language-vim">:echo 5e10</code></pre>
+
+
+<h2 id="coercion">Coercion</h2>
+<p>When you combine a Number and a Float through arithmetic, comparison, or any
+other operation Vim will cast the Number to a Float, resulting in a Float.  Run
+the following command:</p>
+<pre class="codehilite"><code class="language-vim">:echo 2 * 2.0</code></pre>
+
+
+<p>Vim displays <code>4.0</code>.</p>
+<h2 id="division">Division</h2>
+<p>When dividing two Numbers, the remainder is dropped.  Run the following command:</p>
+<pre class="codehilite"><code class="language-vim">:echo 3 / 2</code></pre>
+
+
+<p>Vim displays <code>1</code>.  If you want Vim to perform floating point division one of the
+numbers needs to be a Float, which will cause the other one to be coerced to
+a Float as well.  Run this command:</p>
+<pre class="codehilite"><code class="language-vim">:echo 3 / 2.0</code></pre>
+
+
+<p>Vim displays <code>1.5</code>.  The <code>3</code> is coerced to a Float, and then normal floating
+point division is performed.</p>
+<h2 id="exercises">Exercises</h2>
+<p>Read <code>:help Float</code>.  When might floating point number not work in Vimscript?</p>
+<p>Read <code>:help floating-point-precision</code>.  What might this mean if you're writing
+a Vim plugin that deals with floating point numbers?</p></div>
+
+        <div class="prevnext">
+            
+                <a class="prev" href="https://learnvimscriptthehardway.stevelosh.com/chapters/24.html">« Previous</a>
+            
+            
+                <a class="next" href="https://learnvimscriptthehardway.stevelosh.com/chapters/26.html">Next »</a>
+            
+        </div>
+    </section>
+
+
+            <footer class="sixteen columns">
+                Made by <a href="http://stevelosh.com/">Steve Losh</a>.
+
+                <a href="https://learnvimscriptthehardway.stevelosh.com/license.html">License</a>.
+
+                Built with
+                <a href="http://bitbucket.org/sjl/bookmarkdown/">Bookmarkdown</a>.
+            </footer>
+        </div>
+
+        
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-15328874-8']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                 })();
+            </script>
+        
+
+        
+            <script type="text/javascript">
+                var _gauges = _gauges || [];
+                (function() {
+                 var t   = document.createElement('script');
+                 t.type  = 'text/javascript';
+                 t.async = true;
+                 t.id    = 'gauges-tracker';
+                 t.setAttribute('data-site-id', '4e8f83b7f5a1f546e200000d');
+                 t.src = '//secure.gaug.es/track.js';
+                 var s = document.getElementsByTagName('script')[0];
+                 s.parentNode.insertBefore(t, s);
+                 })();
+             </script>
+        
+    
+</body></html>
