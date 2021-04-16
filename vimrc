@@ -152,7 +152,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Used in INSERT, REPLACE, and COMMAND modes
 iabbrev waht what 
 iabbrev adn and
-iabbrev then then
+iabbrev tehn then
 
 " Abbriviation will be applied when a non-keyword character is pressed.
 " Non key words are words not inside iskeyword Options
