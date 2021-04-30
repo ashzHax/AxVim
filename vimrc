@@ -43,6 +43,7 @@ inoremap <right> <nop>
 inoremap <left>  <nop>
 
 " Use jk to exit out of Insert mode. 
+inoremap <esc><nop> <nop>
 inoremap <esc> <nop>
 inoremap jk <esc>
 
