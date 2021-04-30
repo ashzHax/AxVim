@@ -26,6 +26,10 @@ nnoremap <left> <nop>
 nnoremap H 0
 " Upgraded version of l
 nnoremap L $
+" Upgraded version of j
+nnoremap J <S-down>
+" Upgrade version of k
+nnoremap K <S-up>
 
 " ================================================== "
 " Insert mode key-mapping.
