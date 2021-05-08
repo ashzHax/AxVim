@@ -5,19 +5,21 @@
 
 AXV_VIMRC_PATH=./vimrc
 AXV_VIM_DIR_PATH=./vim
-SYS_HOME_PATH=~/
+SYS_HOME_PATH=~
+SYS_VIMRC_PATH="${SYS_HOME_PATH}/.vimrc"
+SYS_VIM_PATH="${SYS_HOME_PATH}/.vim"
 
 # main
-printf "\n[A] Starting install script\n"
+echo "[alert] starting installation" 
 
-printf "[C] cp ${AXV_VIMRC_PATH} ${SYS_HOME_PATH}"
-cp $AXV_VIMRC_PATH $SYS_HOME_PATH
+echo "[command] cp $AXV_VIMRC_PATH $SYS_VIMRC_PATH"
+cp $AXV_VIMRC_PATH $SYS_VIMRC_PATH
 
-printf "[C] mkdir ${SYS_HOME_PATH}/.vim\n"
-mkdir "${SYS_HOME_PATH}/.vim"
+echo "[command] mkdir -p $SYS_VIM_PATH"
+mkdir -p $SYS_VIM_PATH
 
-printf "[C] cp ${AXV_VIM_DIR_PATH}/* ${SYS_HOME_PATH}/.vim"
-cp "${AXV_VIM_DIR_PATH}/*" "${SYS_HOME_PATH}/.vim"
+echo "[command] cp -r $AXV_VIM_DIR_PATH $SYS_VIM_PATH"
+cp -r $AXV_VIM_DIR_PATH $SYS_VIM_PATH
 
-printf "\n[A] Finished install script\n"
+echo "[alert] finished installation"
 

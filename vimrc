@@ -76,3 +76,7 @@ iabbrev waht what
 iabbrev adn and
 iabbrev tehn then
 
+" ================================================== "
+" Colorscheme Configuration.
+" ================================================== "
+colorscheme pablo
