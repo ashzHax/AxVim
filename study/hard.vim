@@ -227,6 +227,7 @@ setlocal nonumber
 
 " Shadowed. Really, someone is reading too much dramatic stuff. More specific
 " instructions are prioritized, overshadowing later instructions.
+" In this case, Q will do x
 nnoremap <buffer> Q x
 nnoremap Q dd
 
@@ -276,10 +277,22 @@ autocmd FileType javascript :iabbrev <buffer> iff if ()<left>
 " Chapter 14.
 " ========================================================
 " grouping. will combine with other groups
+" group all auto commands that makes sense with each other
+" grouping will allow to souce files without duplicate auto commands running
+
+augroup testgroup
+    autocmd BufWrite * :echom "Baz"
+augroup END
+
 augroup testgroup
 	autocmd! " clearing autocmds
 	autocmd BufWrite * :echom "Foo"
     autocmd BufWrite * :echom "Bar"
 augroup END
 
+augroup filetype_html
+	autocmd!
+	" tag wrapping command
+	autocmd FileType html nnoremap <buffer> <localleader>f Vatzf
+augroup END
 
