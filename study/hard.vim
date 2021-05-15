@@ -296,3 +296,28 @@ augroup filetype_html
 	autocmd FileType html nnoremap <buffer> <localleader>f Vatzf
 augroup END
 
+" ========================================================
+" Chapter 15.
+" ========================================================
+" movement mapping
+" Ex1: command key that can accept parameters can have additional mapping 
+" Ex2: onoremap tells vim, that when its waiting for a input and receives a oremap, 
+"	   it should run set command.
+
+" [d] + omap
+onoremap p i(
+
+" input [dp] inside parameters to delete all param, in normal mode
+" input [cp] inside parameters to delete all param, and go to insert mode
+" return person.get_pets(type="cat", fluffy_only=True)
+
+" [db]
+onoremap b /return<cr>
+def count(i):
+    i += 1
+    print i
+
+    return foo
+
+
+
