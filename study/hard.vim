@@ -303,6 +303,7 @@ augroup END
 " Ex1: command key that can accept parameters can have additional mapping 
 " Ex2: onoremap tells vim, that when its waiting for a input and receives a oremap, 
 "	   it should run set command.
+" Ex3: mostly used to select a certain pattern in visual mode.
 
 " [d] + omap
 onoremap p i(
@@ -311,13 +312,41 @@ onoremap p i(
 " input [cp] inside parameters to delete all param, and go to insert mode
 " return person.get_pets(type="cat", fluffy_only=True)
 
-" [db]
 onoremap b /return<cr>
+" [db]
+" delete all from starting point until the word [return] 
 def count(i):
     i += 1
     print i
 
     return foo
 
+" <c-u> something special? just note that you need it
+" [normal! {arg}] simulates input of {arg} in normal mode
+" [F)] go backwards to find the nearest [)] character
+" [vi(] visually select the inside parentheses
+onoremap il( :<c-u>normal! F)vi(<cr>
+" [dil(] will find the nearest [()] and delete all between the brackets
 
+" [f{char}] go forward, and find first instance of char
+" [F{char}] go backward, and find first instance of char
+
+" NOTE: exersize not completed
+
+" ========================================================
+" Chapter 16.
+" ========================================================
+" finds upwards closest markdown heading indicator and deletes the heading, and go to insert mode
+" [normal!] runs whatever comes next in normal mode
+"           normal! does not recognize special characters like [<cr>]
+" [execute] takes a VimscriptString and run it as if it was a command
+"           converts all special characters to understandable string
+"           [\r] and [<cr>] is both converted to carriage return that is understandable
+" [?^==\+$] backwards search for a line that has 2 or more equal signs and nothing else
+"           cursor will set placed at the first character of the line
+" [nohlsearch] no highlighting when searching 
+" [kvg_] move up 1 from first equals character, enter visual mode, 
+"        move to non-blank character of current line.
+"        Note: better then [$], since [$] selects new line as well
+onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
 
