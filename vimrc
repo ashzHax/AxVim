@@ -78,3 +78,9 @@ iabbrev tehn then
 " Colorscheme Configuration.
 " ================================================== "
 colorscheme pablo
+
+" ================================================== "
+" Insert mode key-mapping.
+" ================================================== "
+command W w
+command Q q

@@ -349,4 +349,24 @@ onoremap il( :<c-u>normal! F)vi(<cr>
 "        move to non-blank character of current line.
 "        Note: better then [$], since [$] selects new line as well
 onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+onoremap ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>
+
+" ========================================================
+" Chapter 17.
+" ========================================================
+set laststatus=2 " show regardless of buffer counts
+set laststatus=0 " disable status line
+
+set statusline=helloworld " print status line
+
+" reset all status line
+set statusline=%f " file name
+set statusline+=%l " current line
+set statusline+=/ 
+set statusline+=%L " total line
+set statusline=[%4l] " str length padding
+set statusline=Current:\ %4l\ Total:\ %4L
+set statusline=%04l " padding with 0
+set statusline=%F " full path
+set statusline=%.20F " full path with padding
 
