@@ -315,11 +315,12 @@ onoremap p i(
 onoremap b /return<cr>
 " [db]
 " delete all from starting point until the word [return] 
-def count(i):
-    i += 1
-    print i
 
-    return foo
+"def count(i):
+"    i += 1
+"    print i
+"
+"    return foo
 
 " <c-u> something special? just note that you need it
 " [normal! {arg}] simulates input of {arg} in normal mode
@@ -336,6 +337,8 @@ onoremap il( :<c-u>normal! F)vi(<cr>
 " ========================================================
 " Chapter 16.
 " ========================================================
+" more movment mappings
+
 " finds upwards closest markdown heading indicator and deletes the heading, and go to insert mode
 " [normal!] runs whatever comes next in normal mode
 "           normal! does not recognize special characters like [<cr>]
@@ -349,15 +352,22 @@ onoremap il( :<c-u>normal! F)vi(<cr>
 "        move to non-blank character of current line.
 "        Note: better then [$], since [$] selects new line as well
 onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+
+" same as ih movement mapping, but the header indicator and the header text is selected and deleted
 onoremap ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>
+
+" NOTE: exersize not completed
 
 " ========================================================
 " Chapter 17.
 " ========================================================
+" status lines
+
 set laststatus=2 " show regardless of buffer counts
 set laststatus=0 " disable status line
 
 set statusline=helloworld " print status line
+set statusline+=helloworld2 " append status line 
 
 " reset all status line
 set statusline=%f " file name
@@ -368,5 +378,21 @@ set statusline=[%4l] " str length padding
 set statusline=Current:\ %4l\ Total:\ %4L
 set statusline=%04l " padding with 0
 set statusline=%F " full path
-set statusline=%.20F " full path with padding
+set statusline=%.20F " full path with padding, limits path string if over 20
+
+" list of item types in :help statusline
+set statusline=%f         " Path to the file
+set statusline+=%=        " Switch to the right side
+set statusline+=%l        " Current line
+set statusline+=/         " Separator
+set statusline+=%L        " Total lines
+setlocal statusline=%f    " local variable configuration 
+
+" make personal configuration!!!
+
+" ========================================================
+" Chapter 18.
+" ========================================================
+" 
+
 
