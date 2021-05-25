@@ -56,6 +56,7 @@ set number
 set autoindent
 set noexpandtab
 set hlsearch
+set nowrap
 
 " ================================================== "
 " Option Configuration. (Value)
@@ -67,6 +68,24 @@ set tabpagemax=100
 set tabstop=4 
 set shiftwidth=4
 
+" Status Line Configuration
+set laststatus=2
+set statusline=\ 
+set statusline+=%m\ 
+set statusline+=[
+set statusline+=%.25F
+set statusline+=]\ 
+set statusline+=[
+set statusline+=%l
+set statusline+=/
+set statusline+=%L
+set statusline+=]
+
+set statusline+=%=
+
+set statusline+=%r\ 
+set statusline+=%y\ 
+
 " ================================================== "
 " Abbreviation Configuration.
 " ================================================== "
@@ -77,10 +96,14 @@ iabbrev tehn then
 " ================================================== "
 " Colorscheme Configuration.
 " ================================================== "
-colorscheme pablo
+colorscheme 256_noir
+"colorscheme desert256
+"colorscheme marklar
+"colorscheme one
 
 " ================================================== "
 " Insert mode key-mapping.
 " ================================================== "
 command W w
 command Q q
+
