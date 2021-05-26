@@ -31,6 +31,10 @@ nnoremap J <S-down>
 " Upgrade version of k
 nnoremap K <S-up>
 
+" Tab Next/Previous Key
+nnoremap <c-j> :tabnext<CR>
+nnoremap <c-k> :tabprev<CR>
+
 " ================================================== "
 " Insert mode key-mapping.
 " ================================================== "
@@ -70,10 +74,11 @@ set shiftwidth=4
 
 " Status Line Configuration
 set laststatus=2
+
 set statusline=\ 
-set statusline+=%m\ 
+set statusline+=%m
 set statusline+=[
-set statusline+=%.25F
+set statusline+=%.50F
 set statusline+=]\ 
 set statusline+=[
 set statusline+=%l
@@ -96,10 +101,15 @@ iabbrev tehn then
 " ================================================== "
 " Colorscheme Configuration.
 " ================================================== "
-colorscheme 256_noir
+"colorscheme 256_noir
 "colorscheme desert256
 "colorscheme marklar
-"colorscheme one
+colorscheme one
+"colorscheme dw_orange-nogui
+"colorscheme industry
+"colorscheme ir_black
+"colorscheme materialbox
+"colorscheme minimalist
 
 " ================================================== "
 " Insert mode key-mapping.
