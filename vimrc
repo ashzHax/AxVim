@@ -32,8 +32,8 @@ nnoremap J <S-down>
 nnoremap K <S-up>
 
 " Tab Next/Previous Key
-nnoremap <c-j> :tabnext<CR>
-nnoremap <c-k> :tabprev<CR>
+nnoremap <c-j> :tabnext<cr>
+nnoremap <c-k> :tabprev<cr>
 
 " ================================================== "
 " Insert mode key-mapping.
@@ -65,7 +65,6 @@ set nowrap
 " ================================================== "
 " Option Configuration. (Value)
 " ================================================== "
-set ts=4
 set sw=4
 set clipboard=unnamedplus
 set tabpagemax=100
