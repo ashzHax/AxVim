@@ -393,6 +393,27 @@ setlocal statusline=%f    " local variable configuration
 " ========================================================
 " Chapter 18.
 " ========================================================
-" 
+
+" For automatic folding of needless code.
+" Vimscript file settings ------------------------ {{{
+augroup filetype_vim
+	autocmd!
+	autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+
+" Short Names
+" Use it long
+setlocal wrap
+" NEVER DO IT SHORT (just more confusing later)
+setl wrap
+
+" help foldlevelstart
+" change all abbreviviated commands to their full commands
+
+" ========================================================
+" Chapter 18.
+" ========================================================
+
 
 
