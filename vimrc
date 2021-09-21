@@ -32,8 +32,8 @@ nnoremap J <S-down>
 nnoremap K <S-up>
 
 " Tab Next/Previous Key
-nnoremap <c-j> :tabnext<CR>
-nnoremap <c-k> :tabprev<CR>
+nnoremap <c-l> :tabnext<CR>
+nnoremap <c-h> :tabprev<CR>
 
 " ================================================== "
 " Insert mode key-mapping.
