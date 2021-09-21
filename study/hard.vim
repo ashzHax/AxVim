@@ -393,6 +393,79 @@ setlocal statusline=%f    " local variable configuration
 " ========================================================
 " Chapter 18.
 " ========================================================
-" 
+
+" For automatic folding of needless code.
+" Vimscript file settings ------------------------ {{{
+augroup filetype_vim
+	autocmd!
+	autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+
+" Short Names
+" Use it long
+setlocal wrap
+" NEVER DO IT SHORT (just more confusing later)
+setl wrap
+
+" help foldlevelstart
+" change all abbreviviated commands to their full commands
+
+" ========================================================
+" Chapter 19.
+" ========================================================
+
+let foo = "poopoo"
+echo foo 
+" poopoo
+
+let foo = 42
+echo foo
+" 42
+
+" Set options using the option's variables
+set textwidth=80
+echo &textwidth
+
+" Boolean options
+set nowrap
+echo &wrap
+
+" 0 = false, 1 = true
+set wrap
+echo &wrap
+
+let &textwidth = 100
+set textwidth?
+
+let &textwidth = &textwidth + 10
+set textwidth?
+
+" Localiazed option configuration
+let &l:number = 1
+let &l:number = 0
+
+" Setting registers as variables
+let @a = "hello!"
+" Paste contents of register on cursor
+"ap
+" Print register value
+echo @a
+
+" Prints whatever is inside the clipboard (copied text)
+echo @"
+
+" Prints recent word search
+echo @/
+
+" Never use "let" if "set" is valid. "let" is just harder to read
+
+" ========================================================
+" Chapter 20.
+" ========================================================
+
+" Local buffer 
+let b:hello = "world"
+
 
 

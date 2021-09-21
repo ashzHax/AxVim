@@ -5,6 +5,11 @@ let mapleader = "."
 let maplocalleader = "."
 
 " ================================================== "
+" General key-mapping.
+" ================================================== "
+
+
+" ================================================== "
 " Normal mode key-mapping.
 " ================================================== "
 " Open my .vimrc
@@ -32,8 +37,8 @@ nnoremap J <S-down>
 nnoremap K <S-up>
 
 " Tab Next/Previous Key
-nnoremap <c-l> :tabnext<CR>
-nnoremap <c-h> :tabprev<CR>
+nnoremap <c-l> :tabnext<cr>
+nnoremap <c-h> :tabprev<cr>
 
 " ================================================== "
 " Insert mode key-mapping.
@@ -53,6 +58,10 @@ inoremap <left>  <nop>
 " Use jk to exit out of Insert mode. 
 inoremap jk <esc>
 
+" Tab Next/Previous Key
+inoremap <c-l> <esc>:tabnext<cr>i
+inoremap <c-h> <esc>:tabprev<cr>i
+
 " ================================================== "
 " Option Configuration. (Boolean)
 " ================================================== "
@@ -65,7 +74,6 @@ set nowrap
 " ================================================== "
 " Option Configuration. (Value)
 " ================================================== "
-set ts=4
 set sw=4
 set clipboard=unnamedplus
 set tabpagemax=100
@@ -104,8 +112,8 @@ iabbrev tehn then
 "colorscheme 256_noir
 "colorscheme desert256
 "colorscheme marklar
-colorscheme one
-"colorscheme dw_orange-nogui
+"colorscheme one
+colorscheme dw_orange-nogui
 "colorscheme industry
 "colorscheme ir_black
 "colorscheme materialbox
