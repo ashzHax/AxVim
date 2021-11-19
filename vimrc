@@ -116,3 +116,9 @@ colorscheme one
 command W w
 command Q q
 
+" ================================================== "
+" Custom file types.
+" ================================================== "
+au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead *.alias set filetype=sh
+
