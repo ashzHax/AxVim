@@ -130,4 +130,5 @@ command Q q
 " ================================================== "
 au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.alias set filetype=sh
+au BufNewFile,BufRead .ak set filetype=sh
 
