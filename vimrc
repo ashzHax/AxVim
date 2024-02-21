@@ -92,6 +92,9 @@ set statusline+=[
 set statusline+=%l
 set statusline+=/
 set statusline+=%L
+set statusline+=]\ 
+set statusline+=[
+set statusline+=%c
 set statusline+=]
 
 set statusline+=%=
